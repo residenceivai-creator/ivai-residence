@@ -265,13 +265,8 @@ p{margin:0 0 1em;}
 .faq-a p{color:var(--marrom-medio);font-size:.92rem;padding-bottom:1.3rem;margin:0;}
 .faq > .text-cta{display:block;text-align:center;margin-top:2.4rem;}
 
-/* CTA WhatsApp — com imagem de fundo discreta -------------------------------- */
-.visit-cta{
-  text-align:center;padding:2.4rem clamp(1.2rem,4vw,3rem);
-  background-size:cover;background-position:center;color:var(--bege);
-}
-.visit-cta h2{color:var(--bege);font-size:clamp(1.1rem,1.8vw,1.4rem);max-width:20ch;margin:0 auto 1.1rem;}
-.visit-cta .button-lg{padding:.9em 2.2em;font-size:.82rem;}
+/* CTA WhatsApp — só o botão, faixa simples entre o FAQ e o rodapé ------------ */
+.visit-cta-simple{text-align:center;padding:1.6rem clamp(1.2rem,4vw,3rem);background:var(--bege);}
 
 /* Fechamento — uma marca só, sem repetição, logo consertada ------------------- */
 .closing{
@@ -353,9 +348,7 @@ p{margin:0 0 1em;}
   .faq-title{margin-bottom:1.8rem;}
   .faq > .text-cta{text-align:left;}
 
-  .visit-cta{padding:1.7rem clamp(1.2rem,4vw,3rem);}
-  .visit-cta h2{margin-bottom:.8rem;}
-  .visit-cta .button-lg{padding:.7em 1.8em;font-size:.74rem;}
+  .visit-cta-simple{padding:1.2rem clamp(1.2rem,4vw,3rem);}
 
   .closing{padding:1.2rem clamp(1.2rem,4vw,3rem) .8rem;gap:.3rem;}
   .closing .logo-pill{width:26px;height:26px;padding:.3rem;margin-bottom:.3rem;}
