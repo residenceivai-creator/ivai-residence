@@ -327,6 +327,12 @@ p{margin:0 0 1em;}
   .audience-v2-grid{gap:2rem;}
   .split{gap:2.6rem;}
 
+  .security-inner{max-width:var(--max);}
+  .security-grid{gap:1.1rem;}
+  .sec-card{padding:1.15em 1.4em;gap:.9em;}
+  .sec-icon{width:23px;height:23px;}
+  .sec-card span{font-size:.9rem;}
+
   .product-v3 h2{margin-bottom:1.8rem;}
   .p3-item{padding-top:1.1rem;padding-bottom:1.1rem;}
 
