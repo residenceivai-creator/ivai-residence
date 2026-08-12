@@ -155,6 +155,37 @@ p{margin:0 0 1em;}
 .hero-stats .dot{opacity:.5;}
 .hero-stats em{font-style:normal;color:var(--terra-crua);}
 
+/* Movimento sutil ao rolar a página ------------------------------------------
+   Tudo aqui dentro é ignorado quando o usuário pede menos movimento
+   (prefers-reduced-motion), e o conteúdo já nasce visível nesse caso. */
+@media (prefers-reduced-motion: no-preference){
+  .hero-content-in{animation:heroIn 1s ease both;}
+  @keyframes heroIn{
+    from{opacity:0;transform:translateY(18px);}
+    to{opacity:1;transform:translateY(0);}
+  }
+
+  .reveal{
+    opacity:0;
+    transform:translateY(26px);
+    transition:opacity .7s ease, transform .7s ease;
+  }
+  .reveal.is-visible{opacity:1;transform:translateY(0);}
+
+  .reveal-scale{
+    opacity:0;
+    transform:scale(.96);
+    transition:opacity .7s ease, transform .7s ease;
+  }
+  .reveal-scale.is-visible{opacity:1;transform:scale(1);}
+
+  [data-parallax]{will-change:transform;}
+}
+
+@media (min-width:901px) and (prefers-reduced-motion: no-preference){
+  .hero{background-attachment:fixed;}
+}
+
 /* Generic section spacing -------------------------------------------------- */
 .section{padding:4.4rem clamp(1.2rem,4vw,3rem);max-width:var(--max);margin:0 auto;}
 

@@ -1,6 +1,6 @@
 // IVAÍ RESIDENCE — interações do site
 
-document.addEventListener("DOMContentLoaded", function () {
+function initIvaiResidence() {
 
   // Menu mobile -------------------------------------------------------
   const navToggle = document.getElementById("navToggle");
@@ -65,4 +65,94 @@ document.addEventListener("DOMContentLoaded", function () {
       if (e.key === "Escape") hideExitPopup();
     });
   }
-});
+
+  // Movimento sutil ao rolar a página --------------------------------------
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (!reduceMotion && "IntersectionObserver" in window) {
+    // Agrupa elementos que devem entrar em sequência, com atraso crescente
+    document.querySelectorAll("[data-reveal-group]").forEach(function (group) {
+      Array.from(group.children).forEach(function (child, i) {
+        if (!child.classList.contains("reveal") && !child.classList.contains("reveal-scale")) {
+          child.classList.add("reveal");
+        }
+        child.style.transitionDelay = Math.min(i * 90, 360) + "ms";
+      });
+    });
+
+    const revealObserver = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: "0px 0px -8% 0px" });
+
+    document.querySelectorAll(".reveal, .reveal-scale").forEach(function (el) {
+      revealObserver.observe(el);
+    });
+
+    // Contagem numérica nos números-chave (40%, 400 m², 100%...)
+    function animateCount(el) {
+      const target = parseFloat(el.dataset.countTo);
+      const prefix = el.dataset.countPrefix || "";
+      const suffix = el.dataset.countSuffix || "";
+      const duration = 1300;
+      const startTime = performance.now();
+
+      function tick(now) {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = prefix + Math.round(target * eased) + suffix;
+        if (progress < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }
+
+    const countObserver = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          animateCount(entry.target);
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.6 });
+
+    document.querySelectorAll("[data-count-to]").forEach(function (el) {
+      countObserver.observe(el);
+    });
+
+    // Parallax bem sutil na imagem de localização (só desktop)
+    const parallaxImg = document.querySelector("[data-parallax]");
+    if (parallaxImg && window.innerWidth > 900) {
+      let ticking = false;
+      function updateParallax() {
+        const rect = parallaxImg.getBoundingClientRect();
+        const vh = window.innerHeight;
+        const distanceFromCenter = (rect.top + rect.height / 2 - vh / 2) / vh;
+        const offset = distanceFromCenter * 24;
+        parallaxImg.style.transform = "translateY(" + offset.toFixed(1) + "px) scale(1.08)";
+        ticking = false;
+      }
+      window.addEventListener("scroll", function () {
+        if (!ticking) {
+          requestAnimationFrame(updateParallax);
+          ticking = true;
+        }
+      }, { passive: true });
+      updateParallax();
+    }
+  } else {
+    // Sem suporte a observer, ou movimento reduzido: garante que tudo apareça
+    document.querySelectorAll(".reveal, .reveal-scale").forEach(function (el) {
+      el.classList.add("is-visible");
+    });
+  }
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initIvaiResidence);
+} else {
+  initIvaiResidence();
+}

@@ -43,6 +43,7 @@
 </script>
 </head>
 <body>
+<noscript><style>.reveal,.reveal-scale{opacity:1!important;transform:none!important;}</style></noscript>
 
 <header class="topbar">
   <a class="brand" href="#inicio"><img class="brand-logo" src="assets/logo.png" alt="Ivaí Residence"><span class="brand-word">Ivaí Residence</span></a>
@@ -62,7 +63,7 @@
 
 <!-- 1. HERO ------------------------------------------------------------- -->
 <section id="inicio" class="hero" style="background-image:linear-gradient(180deg, rgba(46,33,27,.2) 0%, rgba(46,33,27,.72) 100%), url('assets/hero.jpg');">
-  <div class="hero-content">
+  <div class="hero-content hero-content-in">
     <span class="hero-badge">Condomínio Residencial</span>
     <span class="eyebrow light">IVAÍ RESIDENCE</span>
     <h1>É preciso viver.</h1>
@@ -73,15 +74,15 @@
     <div class="hero-stats">
       <span>30 min de Maringá e Campo Mourão</span>
       <span class="dot">•</span>
-      <span>40% dos lotes já vendidos <em>(ago/2026)</em></span>
+      <span><strong data-count-to="40" data-count-suffix="%">40%</strong> dos lotes já vendidos <em>(ago/2026)</em></span>
     </div>
   </div>
 </section>
 
 <!-- 2. PRA QUEM É O IVAÍ RESIDENCE --------------------------------------- -->
 <section class="section audience-v2">
-  <div class="section-label">PRA QUEM É O IVAÍ RESIDENCE</div>
-  <div class="audience-v2-grid">
+  <div class="section-label reveal">PRA QUEM É O IVAÍ RESIDENCE</div>
+  <div class="audience-v2-grid" data-reveal-group>
     <article>
       <svg class="a-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
         <path d="M6 16 16 7l10 9"/><path d="M9 14v11h14V14"/>
@@ -119,13 +120,13 @@
       <p>Uma nova conquista que também pode ser vivida e aproveitada.</p>
     </article>
   </div>
-  <a class="text-cta" href="#condicoes">Quero conhecer os lotes disponíveis →</a>
+  <a class="text-cta reveal" href="#condicoes">Quero conhecer os lotes disponíveis →</a>
 </section>
 
 <!-- 3. LOCALIZAÇÃO -------------------------------------------------------- -->
 <section id="localizacao" class="section split">
-  <div class="media-frame"><img src="assets/localizacao.jpg" alt="Vista aérea do Rio Ivaí e da região de Floresta, Paraná" loading="lazy"></div>
-  <div class="text-block">
+  <div class="media-frame reveal-scale"><img src="assets/localizacao.jpg" alt="Vista aérea do Rio Ivaí e da região de Floresta, Paraná" loading="lazy" data-parallax></div>
+  <div class="text-block" data-reveal-group>
     <span class="eyebrow">LOCALIZAÇÃO</span>
     <strong class="big-stat">30 min de Maringá e Campo Mourão</strong>
     <p>O Ivaí Residence está em Floresta, no eixo regional entre Maringá e Campo Mourão, próximo ao Rio Ivaí.</p>
@@ -148,11 +149,11 @@
 <!-- 4. PRODUTO — sem cards, sem foto, só layout e tipografia ---------------- -->
 <section id="produto" class="product-v3">
   <div class="section">
-    <div class="section-label">O EMPREENDIMENTO</div>
-    <h2>Um lugar para viver.<br>Uma escolha para construir.</h2>
-    <div class="product-v3-row">
+    <div class="section-label reveal">O EMPREENDIMENTO</div>
+    <h2 class="reveal">Um lugar para viver.<br>Uma escolha para construir.</h2>
+    <div class="product-v3-row" data-reveal-group>
       <div class="p3-item">
-        <strong>400 m²</strong>
+        <strong data-count-to="400" data-count-suffix=" m²">400 m²</strong>
         <span>Metragem aproximada de cada lote</span>
       </div>
       <div class="p3-item">
@@ -160,7 +161,7 @@
         <span>Escritura própria, sem compartilhamento</span>
       </div>
       <div class="p3-item">
-        <strong>100%</strong>
+        <strong data-count-to="100" data-count-suffix="%">100%</strong>
         <span>Empreendimento aprovado</span>
       </div>
       <div class="p3-item">
@@ -168,16 +169,16 @@
         <span>Portaria e asfalto já confirmados</span>
       </div>
     </div>
-    <a class="text-cta light" href="#condicoes">Ver condições de pagamento →</a>
+    <a class="text-cta light reveal" href="#condicoes">Ver condições de pagamento →</a>
   </div>
 </section>
 
 <!-- 4.5 COMPRA COM SEGURANÇA — cards com ícone, alinhados ao restante do site -------- -->
 <section class="section security-v2">
   <div class="security-inner">
-    <span class="eyebrow">COMPRA COM SEGURANÇA</span>
-    <p class="security-lead">Informações objetivas para uma decisão tranquila — o que já está oficialmente confirmado sobre o Ivaí Residence.</p>
-    <div class="security-grid">
+    <span class="eyebrow reveal">COMPRA COM SEGURANÇA</span>
+    <p class="security-lead reveal">Informações objetivas para uma decisão tranquila — o que já está oficialmente confirmado sobre o Ivaí Residence.</p>
+    <div class="security-grid" data-reveal-group>
       <div class="sec-card">
         <svg class="sec-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="13"/><path d="M10.5 16.5l3.8 3.8 7.2-8.6"/></svg>
         <span>Empreendimento 100% aprovado</span>
@@ -201,11 +202,11 @@
 <!-- 5. CONDIÇÕES COMERCIAIS -------------------------------------------------- -->
 <section id="condicoes" class="conditions">
   <div class="conditions-inner">
-    <span class="eyebrow light">CONDIÇÕES PARA COMEÇAR</span>
-    <h2>O seu lugar de descanso pode ser aqui.</h2>
-    <p class="sold-note"><span class="sold-badge">40% dos lotes já foram vendidos.</span></p>
-    <p class="sold-updated">Atualizado em agosto de 2026.</p>
-    <div class="pricing-grid">
+    <span class="eyebrow light reveal">CONDIÇÕES PARA COMEÇAR</span>
+    <h2 class="reveal">O seu lugar de descanso pode ser aqui.</h2>
+    <p class="sold-note reveal"><span class="sold-badge"><strong data-count-to="40" data-count-suffix="%">40%</strong> dos lotes já foram vendidos.</span></p>
+    <p class="sold-updated reveal">Atualizado em agosto de 2026.</p>
+    <div class="pricing-grid" data-reveal-group>
       <div class="pricing-card">
         <small>MODELO À VISTA</small>
         <strong>R$ 135 mil</strong>
@@ -218,15 +219,15 @@
         <p class="price-updated">Valor atualizado</p>
       </div>
     </div>
-    <a class="button button-primary" href="#visita">Escolher meu lote</a>
+    <a class="button button-primary reveal" href="#visita">Escolher meu lote</a>
   </div>
 </section>
 
 <!-- 6. FAQ ------------------------------------------------------------------ -->
 <section id="faq" class="section faq">
-  <div class="section-label">DÚVIDAS FREQUENTES</div>
-  <h2 class="faq-title">Perguntas que a gente já ouviu bastante</h2>
-  <div class="faq-list">
+  <div class="section-label reveal">DÚVIDAS FREQUENTES</div>
+  <h2 class="faq-title reveal">Perguntas que a gente já ouviu bastante</h2>
+  <div class="faq-list" data-reveal-group>
     <div class="faq-item">
       <button class="faq-q">Sendo perto do rio, existe risco de alagamento? <span>+</span></button>
       <div class="faq-a"><p>O projeto foi aprovado com estudo técnico da área. Todas as informações de segurança e cota do terreno estão disponíveis com o time comercial antes da decisão de compra.</p></div>
@@ -248,12 +249,12 @@
       <div class="faq-a"><p>É só falar com o plantão de vendas pelo WhatsApp e agendar um horário. Levamos você até o lote e mostramos toda a estrutura.</p></div>
     </div>
   </div>
-  <a class="text-cta" href="#visita">Ainda com dúvidas? Fale com o plantão →</a>
+  <a class="text-cta reveal" href="#visita">Ainda com dúvidas? Fale com o plantão →</a>
 </section>
 
 <!-- 7. CTA WHATSAPP — só o botão, entre o FAQ e o rodapé ------------------- -->
 <section id="visita" class="visit-cta-simple">
-  <a class="button button-whatsapp button-lg" href="https://wa.me/5544999999999?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Iva%C3%AD%20Residence." target="_blank" rel="noopener">
+  <a class="button button-whatsapp button-lg reveal" href="https://wa.me/5544999999999?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Iva%C3%AD%20Residence." target="_blank" rel="noopener">
     <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-5-4.3-5.1-4.5-.2-.2-1.2-1.6-1.2-3.1s.8-2.2 1.1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5.2.5.8 1.9.8 2 .1.2.1.4 0 .6-.1.2-.2.3-.3.5-.2.2-.3.3-.5.5-.2.2-.4.4-.2.7.2.3.9 1.4 1.9 2.3 1.3 1.2 2.4 1.5 2.7 1.7.3.2.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.2.7-.1.3.1 1.7.8 2 .9.3.2.5.2.6.4.1.2.1.9-.1 1.6z"/></svg>
     Falar com o plantão de vendas
   </a>
@@ -262,8 +263,8 @@
 </main>
 
 <!-- 8. FECHAMENTO — marca única, sem repetição ------------------------------ -->
-<footer class="closing">
-  <span class="logo-pill"><img src="assets/logo.png" alt="Ivaí Residence"></span>
+<footer class="closing" data-reveal-group>
+  <span class="logo-pill reveal-scale"><img src="assets/logo.png" alt="Ivaí Residence"></span>
   <h2>A vida começa todos os dias.</h2>
   <strong>É preciso viver.</strong>
 
