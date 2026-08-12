@@ -352,6 +352,18 @@ p{margin:0 0 1em;}
   .faq > .text-cta{max-width:900px;margin-left:0;margin-right:auto;}
   .faq-title{margin-bottom:1.8rem;}
   .faq > .text-cta{text-align:left;}
+
+  .visit-cta{padding:1.7rem clamp(1.2rem,4vw,3rem);}
+  .visit-cta h2{margin-bottom:.8rem;}
+  .visit-cta .button-lg{padding:.7em 1.8em;font-size:.74rem;}
+
+  .closing{padding:1.2rem clamp(1.2rem,4vw,3rem) .8rem;gap:.3rem;}
+  .closing .logo-pill{width:26px;height:26px;padding:.3rem;margin-bottom:.3rem;}
+  .closing .logo-pill img{height:15px;width:15px;}
+  .closing h2{font-size:.82rem;}
+  .closing strong{font-size:.7rem;margin-bottom:.4rem;}
+  .footer-links{gap:1.3rem;margin-bottom:.35rem;}
+  .closing-meta{font-size:.7rem;}
 }
 
 @media (max-width:900px){
