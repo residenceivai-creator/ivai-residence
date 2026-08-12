@@ -287,6 +287,7 @@ p{margin:0 0 1em;}
   position:fixed;inset:0;background:rgba(46,33,27,.6);
   display:flex;align-items:center;justify-content:center;padding:1.2rem;z-index:100;
 }
+.exit-overlay[hidden]{display:none;}
 .exit-card{
   position:relative;background:var(--bege);border-radius:10px;
   max-width:420px;width:100%;padding:2.6rem 2rem 2.2rem;text-align:center;
