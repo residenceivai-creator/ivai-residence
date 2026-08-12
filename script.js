@@ -46,9 +46,14 @@ document.addEventListener("DOMContentLoaded", function () {
     exitPopup.hidden = true;
   }
 
-  if (exitPopup) {
+  const isFinePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+  if (exitPopup && isFinePointer) {
+    let armed = false;
+    setTimeout(function () { armed = true; }, 4000);
+
     document.addEventListener("mouseout", function (e) {
-      if (!e.relatedTarget && e.clientY < 10) {
+      if (armed && !e.relatedTarget && e.clientY < 10) {
         showExitPopup();
       }
     });
