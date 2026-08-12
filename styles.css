@@ -338,7 +338,13 @@ p{margin:0 0 1em;}
   .sold-updated{margin-bottom:1.8rem;}
   .pricing-grid{margin-bottom:1.8rem;}
 
+  .faq{max-width:var(--max);text-align:left;}
+  .faq .section-label,
+  .faq-title,
+  .faq-list,
+  .faq > .text-cta{max-width:900px;margin-left:0;margin-right:auto;}
   .faq-title{margin-bottom:1.8rem;}
+  .faq > .text-cta{text-align:left;}
 }
 
 @media (max-width:900px){
