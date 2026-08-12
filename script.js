@@ -52,8 +52,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let armed = false;
     setTimeout(function () { armed = true; }, 4000);
 
-    document.addEventListener("mouseout", function (e) {
-      if (armed && !e.relatedTarget && e.clientY < 10) {
+    document.documentElement.addEventListener("mouseleave", function (e) {
+      if (armed && e.clientY <= 0) {
         showExitPopup();
       }
     });
