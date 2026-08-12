@@ -197,7 +197,7 @@ p{margin:0 0 1em;}
 /* Produto — sem cards, layout tipográfico integrado ------------------------ */
 .product-v3{background:var(--marrom-noturno);color:var(--bege);}
 .product-v3 .section-label{color:var(--terra-crua);}
-.product-v3 h2{font-size:clamp(1.9rem,3.4vw,2.7rem);color:var(--bege);max-width:14ch;margin-bottom:3rem;}
+.product-v3 h2{font-size:clamp(1.9rem,3.4vw,2.7rem);color:var(--bege);max-width:32ch;margin-bottom:2.2rem;}
 .product-v3-row{display:grid;grid-template-columns:repeat(4,1fr);}
 .p3-item{padding:1.6rem 1.6rem 1.6rem 0;border-left:1px solid rgba(234,228,227,.16);padding-left:1.6rem;}
 .p3-item:first-child{border-left:none;padding-left:0;}
@@ -316,6 +316,29 @@ p{margin:0 0 1em;}
 .exit-close{
   position:absolute;top:.6rem;right:.8rem;background:none;border:none;
   font-size:1.6rem;line-height:1;color:var(--marrom-medio);cursor:pointer;
+}
+
+/* Desktop — aperta os respiros entre seções e dá mais presença ao selo de vendas,
+   mantendo o mobile intocado (ele já está aprovado) --------------------------- */
+@media (min-width:901px){
+  .section{padding:3.2rem clamp(1.2rem,4vw,3rem);}
+  .conditions{padding:3.4rem clamp(1.2rem,4vw,3rem);}
+
+  .audience-v2-grid{gap:2rem;}
+  .split{gap:2.6rem;}
+
+  .product-v3 h2{margin-bottom:1.8rem;}
+  .p3-item{padding-top:1.1rem;padding-bottom:1.1rem;}
+
+  .conditions-inner h2{margin-bottom:1.1rem;}
+  .sold-badge{
+    font-size:.94rem;padding:.62em 1.5em;letter-spacing:.04em;
+    box-shadow:0 6px 18px rgba(0,0,0,.18);
+  }
+  .sold-updated{margin-bottom:1.8rem;}
+  .pricing-grid{margin-bottom:1.8rem;}
+
+  .faq-title{margin-bottom:1.8rem;}
 }
 
 @media (max-width:900px){
