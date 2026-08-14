@@ -143,14 +143,15 @@ p{margin:0 0 1em;}
   padding:.4em 1.1em;border-radius:20px;margin-bottom:1.4rem;
 }
 .hero-brand{display:flex;align-items:center;gap:.7rem;margin-bottom:1.2rem;}
-.hero-brand-icon{height:42px;width:auto;}
+.hero-brand-icon{height:50px;width:auto;}
 .hero-brand-word{
   font-family:var(--font-title);font-weight:600;
-  font-size:clamp(1.3rem,3vw,1.9rem);
+  font-size:clamp(1.6rem,3.8vw,2.4rem);
   letter-spacing:.1em;text-transform:uppercase;
   color:var(--bege);
 }
-.hero-content h1{font-size:clamp(2.2rem,5vw,3.8rem);color:var(--bege);margin-bottom:1em;}
+.hero-content h1{font-size:clamp(1.4rem,3.4vw,2.2rem);color:var(--bege);margin-bottom:1em;}
+.hero-content .button{padding:.8em 1.8em;font-size:.8rem;}
 .hero-stats{
   margin-top:1.8rem;display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;
   font-size:.84rem;color:var(--caqui);letter-spacing:.02em;
@@ -220,12 +221,13 @@ p{margin:0 0 1em;}
 
 /* Pra quem é — tipografia + ícone fino, sem cards, sem foto --------------- */
 .audience-v2{text-align:center;}
+.audience-v2 .section-label{font-size:.88rem;}
 .audience-v2-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2.6rem;text-align:center;}
 .audience-v2-grid article{padding:0 .4rem;border-left:1px solid rgba(46,33,27,.12);}
 .audience-v2-grid article:first-child{border-left:none;}
 .a-icon{width:30px;height:30px;color:var(--terracota);margin:0 auto 1.1rem;}
-.audience-v2-grid h3{font-size:1rem;text-transform:none;letter-spacing:0;margin-bottom:.5em;}
-.audience-v2-grid p{color:var(--marrom-medio);font-size:.88rem;margin:0;}
+.audience-v2-grid h3{font-size:1.1rem;text-transform:none;letter-spacing:0;margin-bottom:.5em;}
+.audience-v2-grid p{color:var(--marrom-medio);font-size:.92rem;margin:0;}
 .audience-v2 > .text-cta{margin-top:2.6rem;}
 
 /* Produto — sem cards, layout tipográfico integrado ------------------------ */
@@ -236,11 +238,11 @@ p{margin:0 0 1em;}
 .p3-item{padding:1.6rem 1.6rem 1.6rem 0;border-left:1px solid rgba(234,228,227,.16);padding-left:1.6rem;}
 .p3-item:first-child{border-left:none;padding-left:0;}
 .p3-item strong{display:block;font-family:var(--font-title);font-weight:600;font-size:1.7rem;margin-bottom:.4em;color:var(--bege);}
-.p3-item span{color:var(--caqui);font-size:.86rem;}
+.p3-item span{color:var(--bege);opacity:.85;font-size:.88rem;}
 
 /* Condições — dois modelos lado a lado --------------------------------------- */
 .conditions{background:var(--verde-escuro);color:var(--bege);padding:4.4rem clamp(1.2rem,4vw,3rem);text-align:center;}
-.conditions-inner{max-width:680px;margin:0 auto;}
+.conditions-inner{max-width:880px;margin:0 auto;}
 .conditions-inner h2{font-size:clamp(1.8rem,3.4vw,2.6rem);color:var(--bege);margin-bottom:.6rem;}
 .sold-note{font-size:.86rem;margin-bottom:.5rem;}
 .sold-updated{font-size:.74rem;color:var(--caqui);opacity:.8;margin-bottom:2.2rem;}
@@ -249,12 +251,34 @@ p{margin:0 0 1em;}
   font-family:var(--font-title);font-size:.82rem;letter-spacing:.03em;
   padding:.5em 1.2em;border-radius:30px;margin-bottom:.6em;
 }
-.pricing-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;margin-bottom:2.4rem;text-align:left;}
-.pricing-card{border:1px solid rgba(234,228,227,.2);border-radius:6px;padding:2rem 1.7rem;}
-.pricing-card small{display:block;color:var(--caqui);text-transform:uppercase;letter-spacing:.1em;font-size:.72rem;margin-bottom:.9em;}
-.pricing-card strong{display:block;font-family:var(--font-title);font-size:1.9rem;font-weight:600;}
-.pricing-card p{color:var(--caqui);font-size:.86rem;margin:.5em 0 0;}
-.pricing-card .price-updated{font-size:.72rem;opacity:.65;margin-top:.9em;}
+
+/* Condições — dois "produtos" (tamanhos de terreno), cada um com opções clicáveis
+   que abrem o WhatsApp direto, em vez de uma tabela de preços --------------- */
+.lot-products{display:grid;grid-template-columns:1fr 1fr;gap:2.2rem;margin:2.4rem 0 1.6rem;text-align:left;}
+.lot-product-head{display:flex;align-items:baseline;gap:.5em;margin-bottom:1.1rem;}
+.lot-product-eyebrow{font-family:var(--font-body);font-style:italic;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--terra-crua);}
+.lot-product-head h3{font-size:1.4rem;color:var(--bege);margin:0;}
+.lot-options{display:flex;flex-direction:column;gap:.8rem;}
+.lot-option{
+  display:block;border:1px solid rgba(234,228,227,.2);border-radius:10px;
+  padding:1.2rem 1.4rem;background:rgba(234,228,227,.04);
+  transition:transform .18s ease, background .18s ease, border-color .18s ease;
+}
+.lot-option:hover{transform:translateY(-2px);background:rgba(234,228,227,.09);border-color:rgba(234,228,227,.4);}
+.lot-option-label{display:block;color:var(--caqui);text-transform:uppercase;letter-spacing:.08em;font-size:.72rem;margin-bottom:.5em;}
+.lot-option-price{display:block;font-family:var(--font-title);font-size:1.4rem;font-weight:600;color:var(--bege);}
+.lot-option-price small{font-family:var(--font-body);font-weight:400;text-transform:none;letter-spacing:0;font-size:.62em;color:var(--caqui);}
+.lot-option-detail{display:block;color:var(--caqui);font-size:.84rem;margin-top:.2em;}
+.lot-option-cta{
+  display:flex;align-items:center;gap:.4em;margin-top:.8em;
+  font-family:var(--font-title);font-size:.78rem;letter-spacing:.03em;
+  color:#3fdb7a;
+}
+.lot-option-icon{width:14px;height:14px;flex:none;}
+.lot-option-custom{background:rgba(234,228,227,.02);border-style:dashed;}
+.lot-option-text{color:var(--caqui);font-size:.86rem;margin:0;}
+.lot-note{font-size:.78rem;color:var(--caqui);opacity:.75;margin:0;}
+.conditions-disclaimer{font-size:.72rem;color:var(--caqui);opacity:.55;margin:1.8rem 0 0;text-align:center;}
 
 /* FAQ ------------------------------------------------------------------------- */
 .faq{max-width:760px;text-align:center;}
@@ -348,7 +372,6 @@ p{margin:0 0 1em;}
     box-shadow:0 6px 18px rgba(0,0,0,.18);
   }
   .sold-updated{margin-bottom:1.8rem;}
-  .pricing-grid{margin-bottom:1.8rem;}
 
   .faq{max-width:var(--max);text-align:left;}
   .faq .section-label,
@@ -385,16 +408,21 @@ p{margin:0 0 1em;}
   .nav-toggle{display:flex;}
 
   .hero{min-height:88vh;}
-  .loc-media-row,.pricing-grid{grid-template-columns:1fr;}
+  .loc-media-row,.lot-products{grid-template-columns:1fr;}
+  .lot-products{gap:2.6rem;}
   .audience-v2-grid,.product-v3-row{grid-template-columns:repeat(2,1fr);row-gap:2.2rem;}
   .audience-v2-grid article:nth-child(3),.p3-item:nth-child(3){border-left:none;}
 }
 
 @media (max-width:560px){
   .section{padding:3.6rem 1.2rem;}
-  .hero-content h1{font-size:2.1rem;}
-  .hero-brand-icon{height:32px;}
+  .hero-content h1{font-size:1.5rem;}
+  .hero-brand-icon{height:38px;}
+  .hero-brand-word{font-size:1.7rem;}
   .audience-v2-grid,.product-v3-row{grid-template-columns:1fr;}
   .audience-v2-grid article,.p3-item{border-left:none !important;padding-left:0 !important;}
+  .audience-v2 .section-label{font-size:.95rem;}
+  .audience-v2-grid h3{font-size:1.2rem;}
+  .audience-v2-grid p{font-size:.96rem;}
   .button-lg{padding:1em 2rem;font-size:.85rem;}
 }
