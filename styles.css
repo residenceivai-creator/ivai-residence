@@ -92,9 +92,9 @@ p{margin:0 0 1em;}
 
 .text-cta{
   display:inline-block;margin-top:2.2rem;
-  font-family:var(--font-title);text-transform:uppercase;letter-spacing:.05em;
-  font-size:.82rem;color:var(--marrom-noturno);
-  border-bottom:1px solid var(--terracota);padding-bottom:3px;
+  font-family:var(--font-title);font-weight:600;text-transform:uppercase;letter-spacing:.07em;
+  font-size:.98rem;color:var(--marrom-noturno);
+  border-bottom:2px solid var(--terracota);padding-bottom:4px;
 }
 .text-cta.light{color:var(--bege);border-color:var(--terra-crua);}
 
@@ -108,11 +108,7 @@ p{margin:0 0 1em;}
   border-bottom:1px solid rgba(46,33,27,.08);
 }
 .brand{display:flex;align-items:center;gap:.6rem;}
-.brand-logo{height:38px;width:auto;}
-.brand-word{
-  font-family:var(--font-title);font-weight:600;letter-spacing:.06em;
-  font-size:1rem;text-transform:uppercase;color:var(--marrom-noturno);
-}
+.brand-logo{height:46px;width:auto;}
 .topbar nav{display:flex;align-items:center;gap:1.6rem;}
 .topbar nav a{font-size:.85rem;letter-spacing:.02em;color:var(--marrom-medio);}
 .topbar nav a:hover{color:var(--marrom-noturno);}
@@ -146,14 +142,21 @@ p{margin:0 0 1em;}
   color:var(--bege);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
   padding:.4em 1.1em;border-radius:20px;margin-bottom:1.4rem;
 }
-.hero-content .eyebrow.light{letter-spacing:.28em;}
-.hero-content h1{font-size:clamp(2.8rem,7vw,5.2rem);color:var(--bege);margin-bottom:1em;}
+.hero-brand{display:flex;align-items:center;gap:.7rem;margin-bottom:1.2rem;}
+.hero-brand-icon{height:42px;width:auto;}
+.hero-brand-word{
+  font-family:var(--font-title);font-weight:600;
+  font-size:clamp(1.3rem,3vw,1.9rem);
+  letter-spacing:.1em;text-transform:uppercase;
+  color:var(--bege);
+}
+.hero-content h1{font-size:clamp(2.2rem,5vw,3.8rem);color:var(--bege);margin-bottom:1em;}
 .hero-stats{
   margin-top:1.8rem;display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;
   font-size:.84rem;color:var(--caqui);letter-spacing:.02em;
 }
 .hero-stats .dot{opacity:.5;}
-.hero-stats em{font-style:normal;color:var(--terra-crua);}
+.hero-stats em{font-style:normal;color:var(--caqui);}
 
 /* Movimento sutil ao rolar a página ------------------------------------------
    Tudo aqui dentro é ignorado quando o usuário pede menos movimento
@@ -227,38 +230,13 @@ p{margin:0 0 1em;}
 
 /* Produto — sem cards, layout tipográfico integrado ------------------------ */
 .product-v3{background:var(--marrom-noturno);color:var(--bege);}
-.product-v3 .section-label{color:var(--terra-crua);}
+.product-v3 .section-label{color:var(--caqui);}
 .product-v3 h2{font-size:clamp(1.9rem,3.4vw,2.7rem);color:var(--bege);max-width:32ch;margin-bottom:2.2rem;}
 .product-v3-row{display:grid;grid-template-columns:repeat(4,1fr);}
 .p3-item{padding:1.6rem 1.6rem 1.6rem 0;border-left:1px solid rgba(234,228,227,.16);padding-left:1.6rem;}
 .p3-item:first-child{border-left:none;padding-left:0;}
 .p3-item strong{display:block;font-family:var(--font-title);font-weight:600;font-size:1.7rem;margin-bottom:.4em;color:var(--bege);}
 .p3-item span{color:var(--caqui);font-size:.86rem;}
-
-/* Compra com segurança — discreta, sem tom defensivo ------------------------ */
-.security-v2{background:var(--bege);}
-.security-inner{max-width:820px;margin:0 auto;text-align:center;}
-.security-lead{color:var(--marrom-medio);font-size:.98rem;max-width:520px;margin:0 auto 2.2rem;}
-.security-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;
-}
-.sec-card{
-  display:flex;flex-direction:column;align-items:center;gap:.9rem;
-  padding:1.8rem 1.2rem;border:1px solid rgba(46,33,27,.14);border-radius:10px;
-  background:rgba(255,255,255,.45);
-}
-.sec-icon{width:26px;height:26px;color:var(--verde-cacador);flex:none;}
-.sec-card span{font-size:.86rem;color:var(--marrom-noturno);line-height:1.4;}
-
-/* No desktop essa lâmina fica desproporcional se mantiver o mesmo tamanho do mobile */
-@media (min-width:901px){
-  .security-v2{padding-top:3.2rem;padding-bottom:3.2rem;}
-  .security-lead{margin-bottom:1.6rem;}
-  .security-grid{gap:.9rem;}
-  .sec-card{flex-direction:row;padding:.9rem 1.1rem;gap:.7rem;border-radius:8px;}
-  .sec-icon{width:18px;height:18px;}
-  .sec-card span{font-size:.78rem;text-align:left;line-height:1.3;}
-}
 
 /* Condições — dois modelos lado a lado --------------------------------------- */
 .conditions{background:var(--verde-escuro);color:var(--bege);padding:4.4rem clamp(1.2rem,4vw,3rem);text-align:center;}
@@ -273,7 +251,7 @@ p{margin:0 0 1em;}
 }
 .pricing-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;margin-bottom:2.4rem;text-align:left;}
 .pricing-card{border:1px solid rgba(234,228,227,.2);border-radius:6px;padding:2rem 1.7rem;}
-.pricing-card small{display:block;color:var(--terra-crua);text-transform:uppercase;letter-spacing:.1em;font-size:.72rem;margin-bottom:.9em;}
+.pricing-card small{display:block;color:var(--caqui);text-transform:uppercase;letter-spacing:.1em;font-size:.72rem;margin-bottom:.9em;}
 .pricing-card strong{display:block;font-family:var(--font-title);font-size:1.9rem;font-weight:600;}
 .pricing-card p{color:var(--caqui);font-size:.86rem;margin:.5em 0 0;}
 .pricing-card .price-updated{font-size:.72rem;opacity:.65;margin-top:.9em;}
@@ -287,13 +265,13 @@ p{margin:0 0 1em;}
 .faq-q{
   width:100%;display:flex;justify-content:space-between;align-items:center;gap:1rem;
   background:none;border:none;text-align:left;cursor:pointer;
-  padding:1.3rem 0;font-family:var(--font-body);font-size:1rem;color:var(--marrom-noturno);
+  padding:1.3rem 0;font-family:var(--font-body);font-size:1.15rem;color:var(--marrom-noturno);
 }
-.faq-q span{font-family:var(--font-title);font-size:1.2rem;color:var(--terracota);transition:transform .2s ease;flex:none;}
+.faq-q span{font-family:var(--font-title);font-size:1.3rem;color:var(--terracota);transition:transform .2s ease;flex:none;}
 .faq-item.open .faq-q span{transform:rotate(45deg);}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease;}
-.faq-item.open .faq-a{max-height:220px;}
-.faq-a p{color:var(--marrom-medio);font-size:.92rem;padding-bottom:1.3rem;margin:0;}
+.faq-item.open .faq-a{max-height:260px;}
+.faq-a p{color:var(--marrom-medio);font-size:1rem;padding-bottom:1.3rem;margin:0;}
 .faq > .text-cta{display:block;text-align:center;margin-top:2.4rem;}
 
 /* CTA WhatsApp — só o botão, faixa simples entre o FAQ e o rodapé ------------ */
@@ -315,8 +293,15 @@ p{margin:0 0 1em;}
 .closing h2{font-size:.95rem;color:var(--bege);margin:0;}
 .closing strong{
   font-family:var(--font-title);font-style:italic;font-size:.8rem;
-  color:var(--terra-crua);text-transform:none;font-weight:500;margin-bottom:.6rem;
+  color:var(--caqui);text-transform:none;font-weight:500;margin-bottom:.6rem;
 }
+.footer-sellers{display:flex;flex-wrap:wrap;justify-content:center;gap:1.4rem 1.8rem;margin-bottom:1.2rem;}
+.footer-seller{
+  display:flex;align-items:center;gap:.5em;
+  font-size:.85rem;color:var(--caqui);letter-spacing:.02em;
+}
+.footer-seller:hover{color:var(--bege);}
+.footer-seller .wa-icon{width:16px;height:16px;color:#25D366;flex:none;}
 .footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:1.6rem;margin-bottom:.5rem;}
 .footer-links a{
   display:flex;align-items:center;gap:.4em;
@@ -325,6 +310,7 @@ p{margin:0 0 1em;}
 .footer-links a:hover{color:var(--bege);}
 .footer-links svg{width:16px;height:16px;}
 .closing-meta{font-size:.76rem;color:var(--caqui);opacity:.6;margin:0;letter-spacing:.03em;}
+.closing-legal{font-size:.7rem;color:var(--caqui);opacity:.5;margin:.3rem 0 0;letter-spacing:.02em;}
 
 /* Pop-up de saída -------------------------------------------------------------- */
 .exit-overlay{
@@ -352,13 +338,6 @@ p{margin:0 0 1em;}
 
   .audience-v2-grid{gap:2rem;}
   .loc-media-row{gap:2.6rem;}
-
-  .security-inner{max-width:var(--max);}
-  .security-lead{font-size:1.05rem;max-width:620px;}
-  .security-grid{gap:1.3rem;}
-  .sec-card{padding:1.7em 1.8em;gap:1.1em;border-radius:10px;box-shadow:0 4px 14px rgba(46,33,27,.06);}
-  .sec-icon{width:32px;height:32px;}
-  .sec-card span{font-size:1.05rem;line-height:1.35;}
 
   .product-v3 h2{margin-bottom:1.8rem;}
   .p3-item{padding-top:1.1rem;padding-bottom:1.1rem;}
@@ -409,14 +388,13 @@ p{margin:0 0 1em;}
   .loc-media-row,.pricing-grid{grid-template-columns:1fr;}
   .audience-v2-grid,.product-v3-row{grid-template-columns:repeat(2,1fr);row-gap:2.2rem;}
   .audience-v2-grid article:nth-child(3),.p3-item:nth-child(3){border-left:none;}
-  .security-grid{grid-template-columns:repeat(2,1fr);}
 }
 
 @media (max-width:560px){
   .section{padding:3.6rem 1.2rem;}
-  .hero-content h1{font-size:2.6rem;}
+  .hero-content h1{font-size:2.1rem;}
+  .hero-brand-icon{height:32px;}
   .audience-v2-grid,.product-v3-row{grid-template-columns:1fr;}
   .audience-v2-grid article,.p3-item{border-left:none !important;padding-left:0 !important;}
-  .security-grid{grid-template-columns:1fr;}
   .button-lg{padding:1em 2rem;font-size:.85rem;}
 }
