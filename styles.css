@@ -142,7 +142,7 @@ p{margin:0 0 1em;}
   color:var(--bege);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
   padding:.4em 1.1em;border-radius:20px;margin-bottom:1.4rem;
 }
-.hero-brand{display:flex;align-items:center;gap:.7rem;margin-bottom:1.2rem;}
+.hero-brand{display:flex;align-items:center;gap:.7rem;margin-bottom:.5rem;}
 .hero-brand-icon{height:50px;width:auto;}
 .hero-brand-word{
   font-family:var(--font-title);font-weight:600;
@@ -150,7 +150,7 @@ p{margin:0 0 1em;}
   letter-spacing:.1em;text-transform:uppercase;
   color:var(--bege);
 }
-.hero-content h1{font-size:clamp(1.4rem,3.4vw,2.2rem);color:var(--bege);margin-bottom:1em;}
+.hero-content h1{font-size:clamp(1.1rem,2.6vw,1.7rem);font-style:italic;font-weight:500;letter-spacing:.02em;color:var(--caqui);margin-bottom:1.4em;}
 .hero-content .button{padding:.8em 1.8em;font-size:.8rem;}
 .hero-stats{
   margin-top:1.8rem;display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;
@@ -184,6 +184,32 @@ p{margin:0 0 1em;}
   .reveal-scale.is-visible{opacity:1;transform:scale(1);}
 
   [data-parallax]{will-change:transform;}
+
+  /* Peixe da marca — entra nadando + balançando levemente, uma vez só,
+     depois fica parado. Sutil, sem parecer decorativo. */
+  @keyframes fishSwimIn{
+    0%{opacity:0;transform:translateX(-16px) rotate(-8deg);}
+    55%{opacity:1;transform:translateX(4px) rotate(3deg);}
+    100%{opacity:1;transform:translateX(0) rotate(0deg);}
+  }
+  @keyframes fishSettle{
+    0%{transform:translateX(-10px) rotate(-6deg);}
+    60%{transform:translateX(3px) rotate(2deg);}
+    100%{transform:translateX(0) rotate(0deg);}
+  }
+  .fish-anim{animation:fishSwimIn 1.1s cubic-bezier(.22,1,.36,1) both;}
+  /* O peixe do hero já está dentro de um bloco que faz fade-in (.hero-content-in);
+     aqui só o movimento de "nadar/assentar", coordenado com esse fade. */
+  .hero-brand-icon.fish-anim{animation:fishSettle .9s cubic-bezier(.22,1,.36,1) .5s both;}
+}
+
+@media (hover:hover) and (pointer:fine) and (prefers-reduced-motion: no-preference){
+  @keyframes fishHover{
+    0%,100%{transform:translateX(0) rotate(0deg);}
+    50%{transform:translateX(2px) rotate(-3deg);}
+  }
+  .brand:hover .fish-anim,
+  .hero-brand:hover .fish-anim{animation:fishHover 1s ease;}
 }
 
 @media (min-width:901px) and (prefers-reduced-motion: no-preference){
@@ -232,13 +258,14 @@ p{margin:0 0 1em;}
 
 /* Produto — sem cards, layout tipográfico integrado ------------------------ */
 .product-v3{background:var(--marrom-noturno);color:var(--bege);}
-.product-v3 .section-label{color:var(--caqui);}
+.product-v3 .section-label{color:var(--bege);}
 .product-v3 h2{font-size:clamp(1.9rem,3.4vw,2.7rem);color:var(--bege);max-width:32ch;margin-bottom:2.2rem;}
 .product-v3-row{display:grid;grid-template-columns:repeat(4,1fr);}
 .p3-item{padding:1.6rem 1.6rem 1.6rem 0;border-left:1px solid rgba(234,228,227,.16);padding-left:1.6rem;}
 .p3-item:first-child{border-left:none;padding-left:0;}
 .p3-item strong{display:block;font-family:var(--font-title);font-weight:600;font-size:1.7rem;margin-bottom:.4em;color:var(--bege);}
-.p3-item span{color:var(--bege);opacity:.85;font-size:.88rem;}
+.p3-item strong.p3-sizes{font-size:1.3rem;}
+.p3-item span{color:var(--bege);font-weight:600;font-size:.9rem;}
 
 /* Condições — dois modelos lado a lado --------------------------------------- */
 .conditions{background:var(--verde-escuro);color:var(--bege);padding:4.4rem clamp(1.2rem,4vw,3rem);text-align:center;}
@@ -256,27 +283,32 @@ p{margin:0 0 1em;}
    que abrem o WhatsApp direto, em vez de uma tabela de preços --------------- */
 .lot-products{display:grid;grid-template-columns:1fr 1fr;gap:2.2rem;margin:2.4rem 0 1.6rem;text-align:left;}
 .lot-product-head{display:flex;align-items:baseline;gap:.5em;margin-bottom:1.1rem;}
-.lot-product-eyebrow{font-family:var(--font-body);font-style:italic;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--terra-crua);}
+.lot-product-eyebrow{font-family:var(--font-body);font-style:italic;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--caqui);}
 .lot-product-head h3{font-size:1.4rem;color:var(--bege);margin:0;}
-.lot-options{display:flex;flex-direction:column;gap:.8rem;}
+.lot-options{display:flex;flex-direction:column;gap:.9rem;}
 .lot-option{
-  display:block;border:1px solid rgba(234,228,227,.2);border-radius:10px;
-  padding:1.2rem 1.4rem;background:rgba(234,228,227,.04);
-  transition:transform .18s ease, background .18s ease, border-color .18s ease;
+  display:flex;flex-direction:column;
+  border:1px solid rgba(234,228,227,.2);border-radius:10px;
+  padding:1.2rem 1.3rem;background:rgba(234,228,227,.05);
 }
-.lot-option:hover{transform:translateY(-2px);background:rgba(234,228,227,.09);border-color:rgba(234,228,227,.4);}
-.lot-option-label{display:block;color:var(--caqui);text-transform:uppercase;letter-spacing:.08em;font-size:.72rem;margin-bottom:.5em;}
-.lot-option-price{display:block;font-family:var(--font-title);font-size:1.4rem;font-weight:600;color:var(--bege);}
-.lot-option-price small{font-family:var(--font-body);font-weight:400;text-transform:none;letter-spacing:0;font-size:.62em;color:var(--caqui);}
-.lot-option-detail{display:block;color:var(--caqui);font-size:.84rem;margin-top:.2em;}
-.lot-option-cta{
-  display:flex;align-items:center;gap:.4em;margin-top:.8em;
-  font-family:var(--font-title);font-size:.78rem;letter-spacing:.03em;
-  color:#3fdb7a;
+.lot-option-label{display:block;color:var(--caqui);text-transform:uppercase;letter-spacing:.08em;font-size:.72rem;margin-bottom:.6em;}
+.lot-option-price{display:block;font-family:var(--font-title);font-size:1.5rem;font-weight:600;color:var(--bege);margin-bottom:.2em;}
+.lot-option-payment{display:flex;align-items:baseline;gap:.35em;flex-wrap:wrap;}
+.lot-option-times{font-size:.86rem;color:var(--caqui);}
+.lot-option-installment{font-family:var(--font-title);font-size:1.55rem;font-weight:600;color:var(--bege);line-height:1.1;}
+.lot-option-down{display:block;color:var(--caqui);font-size:.78rem;margin-top:.3em;}
+.lot-option-text{color:var(--caqui);font-size:.86rem;margin:0;}
+.lot-option-btn{
+  display:flex;align-items:center;justify-content:center;gap:.4em;
+  margin-top:1em;padding:.65em .9em;border-radius:24px;
+  background:#25D366;color:#fff;
+  font-family:var(--font-title);font-size:.74rem;letter-spacing:.03em;text-align:center;
+  transition:background .18s ease, transform .18s ease;
 }
+.lot-option-btn:hover{background:#1EBE5A;transform:translateY(-1px);}
 .lot-option-icon{width:14px;height:14px;flex:none;}
 .lot-option-custom{background:rgba(234,228,227,.02);border-style:dashed;}
-.lot-option-text{color:var(--caqui);font-size:.86rem;margin:0;}
+.lot-option-custom .lot-option-text{flex:1;}
 .lot-note{font-size:.78rem;color:var(--caqui);opacity:.75;margin:0;}
 .conditions-disclaimer{font-size:.72rem;color:var(--caqui);opacity:.55;margin:1.8rem 0 0;text-align:center;}
 
@@ -416,7 +448,7 @@ p{margin:0 0 1em;}
 
 @media (max-width:560px){
   .section{padding:3.6rem 1.2rem;}
-  .hero-content h1{font-size:1.5rem;}
+  .hero-content h1{font-size:1.15rem;}
   .hero-brand-icon{height:38px;}
   .hero-brand-word{font-size:1.7rem;}
   .audience-v2-grid,.product-v3-row{grid-template-columns:1fr;}
