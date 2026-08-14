@@ -123,16 +123,26 @@ function initIvaiResidence() {
       countObserver.observe(el);
     });
 
-    // Parallax bem sutil na imagem de localização (só desktop)
+    // Parallax bem sutil: fundo do hero (mobile + desktop) e imagem de
+    // localização (só desktop, coluna estreita no mobile não pede o efeito)
+    const heroBg = document.querySelector("[data-parallax-bg]");
     const parallaxImg = document.querySelector("[data-parallax]");
-    if (parallaxImg && window.innerWidth > 900) {
+    const parallaxImgActive = !!(parallaxImg && window.innerWidth > 900);
+
+    if (heroBg || parallaxImgActive) {
       let ticking = false;
       function updateParallax() {
-        const rect = parallaxImg.getBoundingClientRect();
-        const vh = window.innerHeight;
-        const distanceFromCenter = (rect.top + rect.height / 2 - vh / 2) / vh;
-        const offset = distanceFromCenter * 24;
-        parallaxImg.style.transform = "translateY(" + offset.toFixed(1) + "px) scale(1.08)";
+        if (heroBg) {
+          const heroOffset = window.scrollY * 0.12;
+          heroBg.style.transform = "translateY(" + heroOffset.toFixed(1) + "px)";
+        }
+        if (parallaxImgActive) {
+          const rect = parallaxImg.getBoundingClientRect();
+          const vh = window.innerHeight;
+          const distanceFromCenter = (rect.top + rect.height / 2 - vh / 2) / vh;
+          const offset = distanceFromCenter * 24;
+          parallaxImg.style.transform = "translateY(" + offset.toFixed(1) + "px) scale(1.08)";
+        }
         ticking = false;
       }
       window.addEventListener("scroll", function () {
