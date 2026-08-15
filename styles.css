@@ -302,10 +302,15 @@ p{margin:0 0 1em;}
 .lot-option-label{display:block;color:var(--caqui);text-transform:uppercase;letter-spacing:.08em;font-size:.72rem;margin-bottom:.6em;}
 .lot-option-row{display:flex;align-items:center;justify-content:space-between;gap:.8rem;flex-wrap:wrap;}
 .lot-option-price{display:block;font-family:var(--font-title);font-size:1.5rem;font-weight:600;color:var(--bege);}
-.lot-option-payment{display:flex;align-items:baseline;gap:.4em;flex-wrap:wrap;}
-.lot-option-times{font-size:.8rem;color:var(--caqui);}
-.lot-option-installment{font-family:var(--font-title);font-size:1.55rem;font-weight:600;color:var(--bege);line-height:1.1;}
-.lot-option-down{display:block;color:var(--caqui);font-size:.78rem;margin-top:.4em;}
+.lot-option-parcel-lead{display:block;color:var(--caqui);font-size:.8rem;margin-bottom:.1em;}
+.lot-option-installment{
+  display:block;font-family:var(--font-title);font-size:2rem;font-weight:600;
+  color:var(--bege);line-height:1.15;margin-bottom:.5em;
+}
+.lot-option-unit{font-size:.5em;font-weight:400;letter-spacing:0;color:var(--caqui);}
+.lot-option-total-label{display:block;color:var(--caqui);font-size:.7rem;opacity:.85;}
+.lot-option-total-value{display:block;color:var(--bege);opacity:.6;font-size:.98rem;font-weight:500;margin-bottom:.7em;}
+.lot-option-disclaimer{color:var(--caqui);opacity:.65;font-size:.68rem;line-height:1.45;margin:0 0 .9em;}
 .lot-option-text{color:var(--bege);font-weight:500;font-size:.9rem;margin:0;}
 .lot-option-btn,.lot-option-btn-sm{
   display:flex;align-items:center;justify-content:center;gap:.4em;
@@ -315,6 +320,7 @@ p{margin:0 0 1em;}
 }
 .lot-option-btn{margin-top:1em;padding:.65em .9em;border-radius:24px;font-size:.74rem;}
 .lot-option-btn-sm{flex:none;padding:.4em .85em;border-radius:18px;font-size:.68rem;white-space:nowrap;}
+.lot-option > .lot-option-btn-sm{align-self:flex-start;}
 .lot-option-btn:hover,.lot-option-btn-sm:hover{background:#1EBE5A;transform:translateY(-1px);}
 .lot-option-icon{width:14px;height:14px;flex:none;}
 .lot-option-custom{background:rgba(234,228,227,.02);border-style:dashed;}
