@@ -344,7 +344,7 @@ p{margin:0 0 1em;}
   color:var(--bege);line-height:1.15;
 }
 .lot-option-unit{font-size:.5em;font-weight:400;letter-spacing:0;color:var(--caqui);}
-.lot-option-down{display:block;color:var(--caqui);font-size:.86rem;margin-top:.6em;}
+.lot-option-down{display:block;color:var(--bege);font-weight:400;font-size:.86rem;margin-top:.6em;}
 .lot-option-fine{color:var(--caqui);opacity:.6;font-size:.68rem;line-height:1.4;margin:.5em 0 0;}
 .lot-option-text{color:var(--bege);font-weight:500;font-size:.9rem;margin:0;}
 .lot-option-btn,.lot-option-btn-sm{
@@ -377,8 +377,9 @@ p{margin:0 0 1em;}
 .faq-q span{font-family:var(--font-title);font-size:1.3rem;color:var(--terracota);transition:transform .2s ease;flex:none;}
 .faq-item.open .faq-q span{transform:rotate(45deg);}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease;}
-.faq-item.open .faq-a{max-height:260px;}
+.faq-item.open .faq-a{max-height:600px;}
 .faq-a p{color:var(--marrom-medio);font-size:1rem;padding-bottom:1.3rem;margin:0;}
+.faq-a p.faq-fine{font-size:.8rem;opacity:.7;margin-top:-.9rem;}
 .faq > .text-cta{display:block;text-align:center;margin-top:2.4rem;}
 
 /* CTA WhatsApp — só o botão, faixa simples entre o FAQ e o rodapé ------------ */
