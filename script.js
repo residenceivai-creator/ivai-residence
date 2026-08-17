@@ -27,6 +27,7 @@ function initIvaiResidence() {
     const prevBtn = carousel.querySelector("[data-carousel-prev]");
     const nextBtn = carousel.querySelector("[data-carousel-next]");
     const dotsWrap = carousel.querySelector("[data-carousel-dots]");
+    const captionEl = carousel.parentElement.querySelector("[data-carousel-caption]");
 
     if (slides.length <= 1) return; // nada pra navegar, mantém tudo escondido
 
@@ -59,6 +60,9 @@ function initIvaiResidence() {
       scrollTimeout = setTimeout(function () {
         const idx = currentIndex();
         dots.forEach(function (d, i) { d.classList.toggle("is-active", i === idx); });
+        if (captionEl && slides[idx].dataset.caption) {
+          captionEl.textContent = slides[idx].dataset.caption;
+        }
       }, 100);
     }, { passive: true });
   });

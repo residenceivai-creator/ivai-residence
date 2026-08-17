@@ -253,10 +253,12 @@ p{margin:0 0 1em;}
 .carousel-arrow:hover{background:rgba(46,33,27,.8);}
 .carousel-arrow-prev{left:.7rem;}
 .carousel-arrow-next{right:.7rem;}
+.carousel-arrow[hidden]{display:none;}
 .carousel-dots{
   position:absolute;bottom:.8rem;left:0;right:0;
   display:flex;justify-content:center;gap:.4rem;z-index:2;
 }
+.carousel-dots[hidden]{display:none;}
 .carousel-dot{
   width:7px;height:7px;border-radius:50%;background:rgba(234,228,227,.55);
   border:none;padding:0;cursor:pointer;transition:background .18s ease, transform .18s ease;
