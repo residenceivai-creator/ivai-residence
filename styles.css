@@ -112,6 +112,9 @@ p{margin:0 0 1em;}
 .topbar nav{display:flex;align-items:center;gap:1.6rem;}
 .topbar nav a{font-size:.85rem;letter-spacing:.02em;color:var(--marrom-medio);}
 .topbar nav a:hover{color:var(--marrom-noturno);}
+.nav-instagram{display:inline-flex;align-items:center;gap:.4em;}
+.nav-instagram svg{width:19px;height:19px;flex:none;}
+.nav-instagram-label{display:none;}
 .nav-cta{
   background:var(--marrom-noturno);color:var(--bege) !important;
   padding:.6em 1.3em;border-radius:24px;
@@ -225,8 +228,40 @@ p{margin:0 0 1em;}
 .loc-intro{max-width:640px;margin-bottom:2.6rem;}
 .loc-intro p{color:var(--marrom-medio);font-size:1.05rem;}
 .loc-media-row{display:grid;grid-template-columns:1fr 1fr;gap:2.4rem;align-items:start;}
-.media-frame{border-radius:4px;overflow:hidden;aspect-ratio:4/3;}
-.media-frame img{width:100%;height:100%;object-fit:cover;}
+
+/* Carrossel de fotos — nativo (scroll-snap), funciona igual em mobile e desktop -- */
+.media-carousel-caption{
+  font-family:var(--font-title);text-transform:uppercase;letter-spacing:.06em;
+  font-size:.78rem;color:var(--marrom-medio);margin-bottom:.7rem;
+}
+.carousel{position:relative;border-radius:4px;overflow:hidden;aspect-ratio:4/3;}
+.carousel-track{
+  display:flex;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;
+  scrollbar-width:none;-ms-overflow-style:none;
+}
+.carousel-track::-webkit-scrollbar{display:none;}
+.carousel-slide{flex:0 0 100%;scroll-snap-align:start;height:100%;}
+.carousel-slide img{width:100%;height:100%;object-fit:cover;display:block;}
+.carousel-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:36px;height:36px;border-radius:50%;border:none;
+  background:rgba(46,33,27,.55);color:var(--bege);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.3rem;line-height:1;cursor:pointer;z-index:2;
+  transition:background .18s ease;
+}
+.carousel-arrow:hover{background:rgba(46,33,27,.8);}
+.carousel-arrow-prev{left:.7rem;}
+.carousel-arrow-next{right:.7rem;}
+.carousel-dots{
+  position:absolute;bottom:.8rem;left:0;right:0;
+  display:flex;justify-content:center;gap:.4rem;z-index:2;
+}
+.carousel-dot{
+  width:7px;height:7px;border-radius:50%;background:rgba(234,228,227,.55);
+  border:none;padding:0;cursor:pointer;transition:background .18s ease, transform .18s ease;
+}
+.carousel-dot.is-active{background:var(--bege);transform:scale(1.35);}
 .big-stat{
   display:block;font-family:var(--font-title);font-size:1.5rem;
   color:var(--marrom-noturno);margin-bottom:.6rem;letter-spacing:.02em;
@@ -452,6 +487,7 @@ p{margin:0 0 1em;}
   .topbar nav.open{transform:translateY(0);opacity:1;pointer-events:auto;}
   .topbar nav a{padding:.85rem 0;border-bottom:1px solid rgba(46,33,27,.08);}
   .topbar nav a:last-child{border-bottom:none;}
+  .nav-instagram-label{display:inline;}
   .nav-cta{text-align:center;margin-top:.6rem;}
   .nav-toggle{display:flex;}
 

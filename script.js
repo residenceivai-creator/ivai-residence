@@ -20,6 +20,49 @@ function initIvaiResidence() {
     });
   }
 
+  // Carrossel de fotos (scroll nativo, funciona igual em mobile e desktop) --
+  document.querySelectorAll("[data-carousel]").forEach(function (carousel) {
+    const track = carousel.querySelector("[data-carousel-track]");
+    const slides = Array.from(track.children);
+    const prevBtn = carousel.querySelector("[data-carousel-prev]");
+    const nextBtn = carousel.querySelector("[data-carousel-next]");
+    const dotsWrap = carousel.querySelector("[data-carousel-dots]");
+
+    if (slides.length <= 1) return; // nada pra navegar, mantém tudo escondido
+
+    prevBtn.hidden = false;
+    nextBtn.hidden = false;
+    dotsWrap.hidden = false;
+
+    slides.forEach(function (_, i) {
+      const dot = document.createElement("button");
+      dot.className = "carousel-dot" + (i === 0 ? " is-active" : "");
+      dot.setAttribute("aria-label", "Ir para foto " + (i + 1));
+      dot.addEventListener("click", function () { goTo(i); });
+      dotsWrap.appendChild(dot);
+    });
+    const dots = Array.from(dotsWrap.children);
+
+    function currentIndex() {
+      return Math.round(track.scrollLeft / track.clientWidth);
+    }
+    function goTo(index) {
+      const clamped = Math.max(0, Math.min(index, slides.length - 1));
+      track.scrollTo({ left: slides[clamped].offsetLeft, behavior: "smooth" });
+    }
+    prevBtn.addEventListener("click", function () { goTo(currentIndex() - 1); });
+    nextBtn.addEventListener("click", function () { goTo(currentIndex() + 1); });
+
+    let scrollTimeout;
+    track.addEventListener("scroll", function () {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(function () {
+        const idx = currentIndex();
+        dots.forEach(function (d, i) { d.classList.toggle("is-active", i === idx); });
+      }, 100);
+    }, { passive: true });
+  });
+
   // FAQ accordion -------------------------------------------------------
   document.querySelectorAll(".faq-item").forEach(function (item) {
     const q = item.querySelector(".faq-q");
