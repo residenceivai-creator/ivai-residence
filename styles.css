@@ -345,9 +345,8 @@ p{margin:0 0 1em;}
   color:var(--bege);line-height:1.15;margin-bottom:.5em;
 }
 .lot-option-unit{font-size:.5em;font-weight:400;letter-spacing:0;color:var(--caqui);}
-.lot-option-total-label{display:block;color:var(--caqui);font-size:.7rem;opacity:.85;}
-.lot-option-total-value{display:block;color:var(--bege);opacity:.6;font-size:.98rem;font-weight:500;margin-bottom:.7em;}
-.lot-option-disclaimer{color:var(--caqui);opacity:.65;font-size:.68rem;line-height:1.45;margin:0 0 .9em;}
+.lot-option-down{display:block;color:var(--caqui);font-size:.86rem;}
+.lot-option-terms{display:block;color:var(--caqui);opacity:.75;font-size:.74rem;margin-top:.2em;margin-bottom:.9em;}
 .lot-option-text{color:var(--bege);font-weight:500;font-size:.9rem;margin:0;}
 .lot-option-btn,.lot-option-btn-sm{
   display:flex;align-items:center;justify-content:center;gap:.4em;
