@@ -339,14 +339,13 @@ p{margin:0 0 1em;}
 .lot-option-label{display:block;color:var(--caqui);text-transform:uppercase;letter-spacing:.08em;font-size:.72rem;margin-bottom:.6em;}
 .lot-option-row{display:flex;align-items:center;justify-content:space-between;gap:.8rem;flex-wrap:wrap;}
 .lot-option-price{display:block;font-family:var(--font-title);font-size:1.5rem;font-weight:600;color:var(--bege);}
-.lot-option-parcel-lead{display:block;color:var(--caqui);font-size:.8rem;margin-bottom:.1em;}
 .lot-option-installment{
   display:block;font-family:var(--font-title);font-size:2rem;font-weight:600;
-  color:var(--bege);line-height:1.15;margin-bottom:.5em;
+  color:var(--bege);line-height:1.15;
 }
 .lot-option-unit{font-size:.5em;font-weight:400;letter-spacing:0;color:var(--caqui);}
-.lot-option-down{display:block;color:var(--caqui);font-size:.86rem;}
-.lot-option-terms{display:block;color:var(--caqui);opacity:.75;font-size:.74rem;margin-top:.2em;margin-bottom:.9em;}
+.lot-option-down{display:block;color:var(--caqui);font-size:.86rem;margin-top:.6em;}
+.lot-option-fine{color:var(--caqui);opacity:.6;font-size:.68rem;line-height:1.4;margin:.5em 0 0;}
 .lot-option-text{color:var(--bege);font-weight:500;font-size:.9rem;margin:0;}
 .lot-option-btn,.lot-option-btn-sm{
   display:flex;align-items:center;justify-content:center;gap:.4em;
