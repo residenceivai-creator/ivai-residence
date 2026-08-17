@@ -140,6 +140,21 @@ function initIvaiResidence() {
       revealObserver.observe(el);
     });
 
+    // Rede de segurança: elementos curtos colados no fim da página podem
+    // nunca cruzar o gatilho de interseção (o scroll acaba antes disso
+    // acontecer). Perto do fim da página, revela tudo que ainda não apareceu.
+    function revealNearBottom() {
+      const nearBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 40;
+      if (nearBottom) {
+        document.querySelectorAll(".reveal:not(.is-visible), .reveal-scale:not(.is-visible)").forEach(function (el) {
+          el.classList.add("is-visible");
+        });
+      }
+    }
+    window.addEventListener("scroll", revealNearBottom, { passive: true });
+    window.addEventListener("load", revealNearBottom);
+    revealNearBottom();
+
     // Contagem numérica nos números-chave (40%, 400 m², 100%...)
     function animateCount(el) {
       const target = parseFloat(el.dataset.countTo);
