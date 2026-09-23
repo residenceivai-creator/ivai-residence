@@ -420,6 +420,28 @@ p{margin:0 0 1em;}
 .closing-meta{font-size:.76rem;color:var(--caqui);opacity:.6;margin:0;letter-spacing:.03em;}
 .closing-legal{font-size:.7rem;color:var(--caqui);opacity:.5;margin:.3rem 0 0;letter-spacing:.02em;}
 
+/* Botão flutuante de WhatsApp --------------------------------------------------- */
+.wa-float{
+  position:fixed;right:1.2rem;bottom:1.2rem;z-index:90;
+  display:flex;align-items:center;gap:.6em;
+  background:#fff;color:var(--marrom-noturno);
+  padding:.5em .9em .5em .5em;border-radius:32px;
+  box-shadow:0 8px 24px rgba(46,33,27,.22);
+  font-family:var(--font-title);font-weight:600;font-size:.92rem;
+  text-decoration:none;line-height:1;
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.wa-float:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(46,33,27,.28);}
+.wa-float-icon{
+  width:34px;height:34px;flex:none;padding:7px;border-radius:50%;
+  background:#25D366;color:#fff;
+}
+@media (max-width:600px){
+  .wa-float{right:.9rem;bottom:.9rem;}
+  .wa-float span{display:none;}
+  .wa-float{padding:.5em;}
+}
+
 /* Pop-up de saída -------------------------------------------------------------- */
 .exit-overlay{
   position:fixed;inset:0;background:rgba(46,33,27,.6);
