@@ -387,6 +387,53 @@ p{margin:0 0 1em;}
   .river-feature-item{flex:none;}
 }
 
+/* Lançamento oficial --------------------------------------------------------- */
+.launch-feature{position:relative;overflow:hidden;}
+.launch-feature-bg{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0;}
+.launch-feature-inner{position:relative;z-index:1;color:var(--bege);padding-top:5rem;padding-bottom:5rem;}
+.launch-feature-inner .section-label{color:var(--caqui);}
+.launch-feature-inner h2{
+  font-family:var(--font-title);font-weight:700;color:var(--bege);
+  font-size:clamp(2.4rem,6vw,4.2rem);line-height:1;margin:.3em 0 .2em;
+}
+.launch-feature-sub{
+  font-family:var(--font-title);font-weight:600;text-transform:uppercase;
+  letter-spacing:.05em;color:var(--terracota);font-size:1.05rem;margin:0 0 1.1em;
+}
+.launch-feature-lead{font-size:1.02rem;max-width:44ch;opacity:.94;margin:0 0 2.2em;line-height:1.55;}
+
+.launch-feature-row{
+  display:flex;flex-wrap:wrap;align-items:center;gap:1.4rem;
+  padding-bottom:1.8rem;margin-bottom:1.8rem;
+  border-bottom:1px solid rgba(234,228,227,.2);
+}
+.launch-feature-item{display:flex;align-items:center;gap:.7em;max-width:220px;}
+.launch-feature-item svg{width:26px;height:26px;flex:none;opacity:.9;}
+.launch-feature-item span{font-family:var(--font-title);font-weight:500;font-size:.88rem;line-height:1.3;}
+.launch-feature-sep{width:1px;height:32px;background:rgba(234,228,227,.28);flex:none;}
+
+.launch-feature-btn{
+  display:inline-flex;align-items:center;gap:.6em;
+  background:var(--bege);color:var(--marrom-noturno);
+  padding:.85em 1.8em;border-radius:30px;
+  font-family:var(--font-title);font-weight:600;text-transform:uppercase;
+  font-size:.85rem;letter-spacing:.05em;
+  box-shadow:0 10px 28px rgba(0,0,0,.28);
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.launch-feature-btn:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(0,0,0,.34);}
+.launch-feature-btn svg{width:18px;height:18px;flex:none;color:#25D366;}
+
+@media (max-width:900px){
+  .launch-feature-inner{padding-top:3.8rem;padding-bottom:3.8rem;}
+  .launch-feature-row{flex-direction:column;align-items:flex-start;gap:1.2rem;}
+  .launch-feature-sep{display:none;}
+  .launch-feature-item{max-width:none;}
+}
+@media (max-width:560px){
+  .launch-feature-btn{width:100%;justify-content:center;}
+}
+
 /* Produto — sem cards, layout tipográfico integrado ------------------------ */
 .product-v3{background:var(--marrom-noturno);color:var(--bege);}
 .product-v3 .section-label{color:var(--bege);}
