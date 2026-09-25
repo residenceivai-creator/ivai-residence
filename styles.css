@@ -129,13 +129,15 @@ p{margin:0 0 1em;}
 .promo-btn svg{width:15px;height:15px;flex:none;color:#25D366;}
 
 @media (max-width:900px){
-  .promo-bar-inner{flex-direction:column;gap:.5rem;padding:.7rem clamp(1.2rem,4vw,3rem);}
-  .promo-items{flex-direction:column;align-items:flex-start;gap:.4rem;}
-  .promo-icon{width:17px;height:17px;}
+  .promo-bar-inner{flex-direction:column;gap:.6rem;padding:.65rem clamp(1.2rem,4vw,3rem);}
+  .promo-items{flex-wrap:nowrap;justify-content:space-between;gap:.5rem;width:100%;}
+  .promo-item{flex-direction:column;align-items:center;text-align:center;gap:.3rem;flex:1;min-width:0;}
+  .promo-icon{width:18px;height:18px;}
   .promo-sep{display:none;}
-  .promo-text{font-size:.7rem;}
-  .promo-text strong{font-size:.74rem;}
-  .promo-btn{width:100%;justify-content:center;margin-top:.15rem;}
+  .promo-text{font-size:.66rem;line-height:1.2;}
+  .promo-text strong{font-size:.66rem;}
+  .promo-text-detail{display:none;}
+  .promo-btn{width:100%;justify-content:center;}
 }
 
 /* Header / nav ------------------------------------------------------------ */
@@ -177,6 +179,7 @@ p{margin:0 0 1em;}
   position:absolute;left:0;right:0;top:-15%;bottom:-15%;
   background-size:cover;background-position:center;
   z-index:0;will-change:transform;
+  background-image:linear-gradient(180deg, rgba(46,33,27,.2) 0%, rgba(46,33,27,.72) 100%), url('assets/hero.jpg');
 }
 .hero-content{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;max-width:640px;}
 .hero-badge{
@@ -389,7 +392,10 @@ p{margin:0 0 1em;}
 
 /* Lançamento oficial --------------------------------------------------------- */
 .launch-feature{position:relative;overflow:hidden;}
-.launch-feature-bg{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0;}
+.launch-feature-bg{
+  position:absolute;inset:0;background-size:cover;background-position:center;z-index:0;
+  background-image:linear-gradient(100deg, rgba(16,10,7,.94) 0%, rgba(16,10,7,.82) 32%, rgba(16,10,7,.5) 62%, rgba(16,10,7,.18) 100%), url('assets/lancamento-bg.jpg');
+}
 .launch-feature-inner{position:relative;z-index:1;color:var(--bege);padding-top:5rem;padding-bottom:5rem;}
 .launch-feature-inner .section-label{color:var(--caqui);}
 .launch-feature-inner h2{
@@ -530,6 +536,7 @@ p{margin:0 0 1em;}
   text-transform:uppercase;letter-spacing:.04em;
 }
 .sales-card-btn svg{width:15px;height:15px;flex:none;}
+.sales-contact-mobile{display:none;}
 
 /* Fechamento — rodapé simplificado, verde da marca --------------------------- */
 .closing{
@@ -570,6 +577,46 @@ p{margin:0 0 1em;}
 @media (max-width:600px){
   .wa-float{right:.9rem;bottom:.9rem;font-size:.86rem;}
   .loc-grid{grid-template-columns:1fr;gap:2.2rem;}
+
+  /* Hero — menos altura, imagem recortada pra valorizar o terreno, não o céu vazio */
+  .hero{min-height:72vh;}
+  .hero-bg{
+    background-image:linear-gradient(180deg, rgba(46,33,27,.2) 0%, rgba(46,33,27,.72) 100%), url('assets/hero-mobile.jpg');
+    background-position:center 65%;
+  }
+
+  /* Localização — título fluido, sem quebra feia tipo "40" sozinho na linha */
+  .loc-intro h2{max-width:none;font-size:1.55rem;line-height:1.32;}
+
+  /* Pra quem é — cards empilhados com efeito sticky (um cobre o outro ao rolar) */
+  .audience-photo-cards{display:block;}
+  .audience-photo-card{position:sticky;top:88px;margin-bottom:1.2rem;}
+  .audience-photo-card:nth-child(1){z-index:1;}
+  .audience-photo-card:nth-child(2){z-index:2;}
+  .audience-photo-card:nth-child(3){z-index:3;}
+
+  /* Viva o melhor da região — remove o card verde, que cobria a foto */
+  .river-feature-card{display:none;}
+
+  /* Lançamento oficial — mostra a foto (costela/chopp), não só fundo escuro */
+  .launch-feature-bg{
+    background-image:linear-gradient(180deg, rgba(16,10,7,.88) 0%, rgba(16,10,7,.55) 45%, rgba(16,10,7,.22) 100%), url('assets/lancamento-bg.jpg');
+    background-position:75% center;
+  }
+
+  /* Contato comercial — 3 botões compactos lado a lado no lugar dos cards grandes */
+  .sales-contact-cards{display:none;}
+  .sales-contact-mobile{
+    display:flex;flex-wrap:wrap;gap:.6rem;
+  }
+  .sales-mini{
+    flex:1 1 auto;display:flex;align-items:center;justify-content:center;gap:.4em;
+    background:rgba(234,228,227,.14);border:1px solid rgba(234,228,227,.3);
+    color:var(--bege);border-radius:20px;padding:.7em .8em;
+    font-family:var(--font-title);font-weight:600;font-size:.72rem;
+    text-align:center;white-space:nowrap;
+  }
+  .sales-mini svg{width:14px;height:14px;flex:none;color:#25D366;}
 }
 
 /* Pop-up de saída -------------------------------------------------------------- */
