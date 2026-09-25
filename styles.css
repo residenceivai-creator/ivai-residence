@@ -332,6 +332,40 @@ p{margin:0 0 1em;}
 .audience-v2-grid p{color:var(--marrom-medio);font-size:.92rem;margin:0;}
 .audience-v2 > .text-cta{margin-top:2.6rem;}
 
+/* Pra quem é — com fotos ---------------------------------------------------- */
+.audience-photo{background:#fff;}
+.audience-photo-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:3.2rem;align-items:center;}
+.audience-photo-text h2{
+  font-family:var(--font-title);font-weight:600;
+  font-size:clamp(1.5rem,2.4vw,2.1rem);color:var(--marrom-noturno);
+  line-height:1.25;margin:0 0 .7em;
+}
+.audience-photo-text p{color:var(--marrom-medio);font-size:1rem;max-width:38ch;margin:0 0 1.7em;}
+.audience-photo-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;}
+.audience-photo-card{
+  background:var(--bege);border-radius:18px;overflow:hidden;
+  box-shadow:0 8px 22px rgba(46,33,27,.09);
+}
+.audience-photo-card img{width:100%;aspect-ratio:4/5;object-fit:cover;}
+.audience-photo-card h3{
+  font-family:var(--font-title);font-weight:600;font-size:1rem;
+  color:var(--marrom-noturno);margin:1rem 1rem .4em;line-height:1.25;
+}
+.audience-photo-card p{color:var(--marrom-medio);font-size:.82rem;line-height:1.4;margin:0 1rem 1.1rem;}
+
+@media (max-width:900px){
+  .audience-photo-grid{grid-template-columns:1fr;gap:2.2rem;}
+  .audience-photo-text{text-align:left;}
+  .audience-photo-text p{max-width:none;}
+  .audience-photo-cards{grid-template-columns:1fr 1fr 1fr;gap:.8rem;}
+  .audience-photo-card h3{font-size:.86rem;margin:.7rem .7rem .3em;}
+  .audience-photo-card p{font-size:.72rem;margin:0 .7rem .8rem;}
+}
+@media (max-width:600px){
+  .audience-photo-cards{grid-template-columns:1fr;gap:1rem;}
+  .audience-photo-card img{aspect-ratio:16/10;}
+}
+
 /* Produto — sem cards, layout tipográfico integrado ------------------------ */
 .product-v3{background:var(--marrom-noturno);color:var(--bege);}
 .product-v3 .section-label{color:var(--bege);}
