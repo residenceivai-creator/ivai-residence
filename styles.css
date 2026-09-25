@@ -366,6 +366,43 @@ p{margin:0 0 1em;}
   .audience-photo-card img{aspect-ratio:16/10;}
 }
 
+/* Viva o melhor da região ---------------------------------------------------- */
+.river-feature{position:relative;overflow:hidden;min-height:600px;display:flex;align-items:center;}
+.river-feature-bg{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0;}
+.river-feature-grid{
+  position:relative;z-index:1;width:100%;
+  display:grid;grid-template-columns:1.15fr .55fr;gap:3rem;align-items:center;
+}
+.river-feature-text{color:var(--bege);}
+.river-feature-text .section-label{color:var(--bege);opacity:.9;}
+.river-feature-text h2{
+  font-family:var(--font-title);font-weight:600;color:var(--bege);
+  font-size:clamp(1.9rem,3.6vw,2.9rem);line-height:1.15;max-width:14ch;
+  margin:.5em 0 .6em;
+}
+.river-feature-text p{font-size:1rem;max-width:42ch;opacity:.94;margin:0 0 1.8em;line-height:1.55;}
+.river-feature-card{
+  background:var(--verde-escuro);color:var(--bege);
+  border-radius:20px;padding:1.7rem 1.6rem;
+  display:flex;flex-direction:column;gap:1.4rem;
+  box-shadow:0 18px 40px rgba(0,0,0,.32);
+}
+.river-feature-item{display:flex;align-items:center;gap:.9rem;}
+.river-feature-item svg{width:24px;height:24px;flex:none;opacity:.92;}
+.river-feature-item span{font-family:var(--font-title);font-weight:500;font-size:.92rem;line-height:1.25;}
+
+@media (max-width:900px){
+  .river-feature{min-height:0;padding:4rem 0;}
+  .river-feature-grid{grid-template-columns:1fr;gap:2.2rem;}
+  .river-feature-card{flex-direction:row;flex-wrap:wrap;column-gap:1.6rem;row-gap:1.2rem;}
+  .river-feature-item{flex:1 1 40%;}
+}
+@media (max-width:560px){
+  .river-feature-text h2{max-width:none;}
+  .river-feature-card{flex-direction:column;}
+  .river-feature-item{flex:none;}
+}
+
 /* Produto — sem cards, layout tipográfico integrado ------------------------ */
 .product-v3{background:var(--marrom-noturno);color:var(--bege);}
 .product-v3 .section-label{color:var(--bege);}
