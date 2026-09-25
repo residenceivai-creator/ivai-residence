@@ -79,6 +79,48 @@ function initIvaiResidence() {
     });
   });
 
+  // Lotes — abrir/fechar condições de cada card ----------------------------
+  document.querySelectorAll(".lot-card-v2-toggle").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      const card = btn.closest(".lot-card-v2");
+      const isOpen = card.classList.toggle("is-open");
+      btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+  });
+
+  // Contagem regressiva — condições de lançamento válidas até 17/10 --------
+  const countdownEl = document.getElementById("launchCountdown");
+  if (countdownEl) {
+    const deadline = new Date("2026-10-17T23:59:59-03:00").getTime();
+    const daysEl = countdownEl.querySelector("[data-cd-days]");
+    const hoursEl = countdownEl.querySelector("[data-cd-hours]");
+    const minutesEl = countdownEl.querySelector("[data-cd-minutes]");
+    const secondsEl = countdownEl.querySelector("[data-cd-seconds]");
+
+    function pad(n) {
+      return String(n).padStart(2, "0");
+    }
+
+    function tickCountdown() {
+      const diff = deadline - Date.now();
+      if (diff <= 0) {
+        daysEl.textContent = "00";
+        hoursEl.textContent = "00";
+        minutesEl.textContent = "00";
+        secondsEl.textContent = "00";
+        clearInterval(countdownTimer);
+        return;
+      }
+      daysEl.textContent = pad(Math.floor(diff / 86400000));
+      hoursEl.textContent = pad(Math.floor((diff % 86400000) / 3600000));
+      minutesEl.textContent = pad(Math.floor((diff % 3600000) / 60000));
+      secondsEl.textContent = pad(Math.floor((diff % 60000) / 1000));
+    }
+
+    tickCountdown();
+    var countdownTimer = setInterval(tickCountdown, 1000);
+  }
+
   // Pop-up de saída -------------------------------------------------------
   const exitPopup = document.getElementById("exitPopup");
   const exitClose = document.getElementById("exitClose");
