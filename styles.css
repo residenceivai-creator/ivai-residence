@@ -437,9 +437,7 @@ p{margin:0 0 1em;}
   background:#25D366;color:#fff;
 }
 @media (max-width:600px){
-  .wa-float{right:.9rem;bottom:.9rem;}
-  .wa-float span{display:none;}
-  .wa-float{padding:.5em;}
+  .wa-float{right:.9rem;bottom:.9rem;font-size:.86rem;}
 }
 
 /* Pop-up de saída -------------------------------------------------------------- */
