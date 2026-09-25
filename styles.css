@@ -21,6 +21,7 @@
 
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
+#lancamento,#diferenciais,#localizacao,#produto,#condicoes,#faq{scroll-margin-top:80px;}
 body{
   margin:0;
   background:var(--bege);
@@ -87,6 +88,11 @@ p{margin:0 0 1em;}
   border-color:var(--terracota);box-shadow:none;padding:.75em 1.5em;font-size:.78rem;
 }
 .button-outline:hover{background:rgba(138,102,86,.08);transform:none;}
+.button-outline-light{
+  background:transparent;color:var(--bege);
+  border-color:rgba(234,228,227,.55);box-shadow:none;
+}
+.button-outline-light:hover{background:rgba(234,228,227,.12);transform:none;}
 .button-lg{padding:1.15em 2.8em;font-size:.92rem;}
 .btn-icon{width:18px;height:18px;flex:none;}
 
@@ -149,12 +155,6 @@ p{margin:0 0 1em;}
 .nav-instagram{display:inline-flex;align-items:center;gap:.4em;}
 .nav-instagram svg{width:19px;height:19px;flex:none;}
 .nav-instagram-label{display:none;}
-.nav-cta{
-  background:var(--marrom-noturno);color:var(--bege) !important;
-  padding:.6em 1.3em;border-radius:24px;
-  font-family:var(--font-title);text-transform:uppercase;
-  font-size:.78rem;letter-spacing:.06em;
-}
 .nav-toggle{
   display:none;flex-direction:column;justify-content:center;gap:5px;
   width:34px;height:34px;background:none;border:none;cursor:pointer;padding:0;
@@ -194,6 +194,7 @@ p{margin:0 0 1em;}
 }
 .hero-content h1{font-size:clamp(1.1rem,2.6vw,1.7rem);font-style:italic;font-weight:500;letter-spacing:.02em;color:var(--caqui);margin-bottom:1.4em;}
 .hero-content .button{padding:.8em 1.8em;font-size:.8rem;}
+.hero-buttons{display:flex;align-items:center;justify-content:center;gap:.9rem;flex-wrap:wrap;}
 .hero-stats{
   margin-top:1.8rem;display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;
   font-size:.84rem;color:var(--caqui);letter-spacing:.02em;
@@ -543,7 +544,6 @@ p{margin:0 0 1em;}
   .topbar nav a{padding:.85rem 0;border-bottom:1px solid rgba(46,33,27,.08);}
   .topbar nav a:last-child{border-bottom:none;}
   .nav-instagram-label{display:inline;}
-  .nav-cta{text-align:center;margin-top:.6rem;}
   .nav-toggle{display:flex;}
 
   .hero{min-height:88vh;}
