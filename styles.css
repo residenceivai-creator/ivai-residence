@@ -519,43 +519,53 @@ p{margin:0 0 1em;}
 .faq-a p{color:var(--marrom-medio);font-size:1rem;padding-bottom:1.3rem;margin:0;}
 .faq > .text-cta{display:block;text-align:center;margin-top:2.4rem;}
 
-/* CTA WhatsApp — só o botão, faixa simples entre o FAQ e o rodapé ------------ */
-.visit-cta-simple{text-align:center;padding:1.6rem clamp(1.2rem,4vw,3rem);background:var(--bege);}
-
-/* Fechamento — uma marca só, sem repetição, logo consertada ------------------- */
-.closing{
-  background:linear-gradient(160deg,var(--marrom-noturno),var(--verde-escuro));
-  color:var(--bege);text-align:center;
-  padding:1.8rem clamp(1.2rem,4vw,3rem) 1.1rem;
-  display:flex;flex-direction:column;align-items:center;gap:.4rem;
+/* Contato comercial — equipe de vendas --------------------------------------- */
+.sales-contact{position:relative;overflow:hidden;}
+.sales-contact-bg{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0;}
+.sales-contact-inner{position:relative;z-index:1;padding-top:4.6rem;padding-bottom:4.6rem;}
+.sales-contact-text{color:var(--bege);max-width:640px;margin-bottom:2.6rem;}
+.sales-contact-text h2{
+  font-family:var(--font-title);font-weight:600;color:var(--bege);
+  font-size:clamp(1.7rem,3vw,2.4rem);margin:0 0 .5em;
 }
+.sales-contact-text p{font-size:1.02rem;opacity:.92;margin:0;}
+.sales-contact-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;}
+.sales-card{
+  background:rgba(234,228,227,.1);border:1px solid rgba(234,228,227,.25);
+  border-radius:16px;padding:1.5rem 1.4rem;
+  display:flex;flex-direction:column;
+  text-decoration:none;transition:transform .18s ease, background .18s ease;
+}
+.sales-card:hover{transform:translateY(-3px);background:rgba(234,228,227,.16);}
+.sales-card-name{font-family:var(--font-title);font-weight:600;font-size:1.3rem;color:var(--bege);}
+.sales-card-role{font-size:.82rem;color:var(--caqui);margin:.2em 0 1.2rem;}
+.sales-card-btn{
+  display:inline-flex;align-items:center;gap:.5em;align-self:flex-start;
+  background:#25D366;color:#fff;padding:.5em 1.1em;border-radius:20px;
+  font-family:var(--font-title);font-weight:600;font-size:.76rem;
+  text-transform:uppercase;letter-spacing:.04em;
+}
+.sales-card-btn svg{width:15px;height:15px;flex:none;}
+
+/* Fechamento — rodapé simplificado, verde da marca --------------------------- */
+.closing{
+  background:var(--verde-escuro);color:var(--bege);
+  padding:1.8rem clamp(1.2rem,4vw,3rem);
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem 2rem;
+}
+.closing-left{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1.6rem;}
 .closing .logo-pill{
   display:inline-flex;align-items:center;justify-content:center;
-  background:var(--bege);padding:.4rem;border-radius:50%;margin-bottom:.5rem;
-  width:34px;height:34px;
+  background:var(--bege);padding:.4rem;border-radius:50%;
+  width:34px;height:34px;flex:none;
 }
 .closing .logo-pill img{height:20px;width:20px;object-fit:contain;}
-.closing h2{font-size:.95rem;color:var(--bege);margin:0;}
-.closing strong{
-  font-family:var(--font-title);font-style:italic;font-size:.8rem;
-  color:var(--caqui);text-transform:none;font-weight:500;margin-bottom:.6rem;
-}
-.footer-sellers{display:flex;flex-wrap:wrap;justify-content:center;gap:1.4rem 1.8rem;margin-bottom:1.2rem;}
-.footer-seller{
-  display:flex;align-items:center;gap:.5em;
-  font-size:.85rem;color:var(--caqui);letter-spacing:.02em;
-}
-.footer-seller:hover{color:var(--bege);}
-.footer-seller .wa-icon{width:16px;height:16px;color:#25D366;flex:none;}
-.footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:1.6rem;margin-bottom:.5rem;}
-.footer-links a{
-  display:flex;align-items:center;gap:.4em;
-  font-size:.82rem;color:var(--caqui);letter-spacing:.02em;
-}
+.footer-links{display:flex;flex-wrap:wrap;gap:1.2rem;}
+.footer-links a{font-size:.82rem;color:var(--caqui);letter-spacing:.02em;}
 .footer-links a:hover{color:var(--bege);}
-.footer-links svg{width:16px;height:16px;}
-.closing-meta{font-size:.76rem;color:var(--caqui);opacity:.6;margin:0;letter-spacing:.03em;}
-.closing-legal{font-size:.7rem;color:var(--caqui);opacity:.5;margin:.3rem 0 0;letter-spacing:.02em;}
+.closing-meta{font-size:.78rem;color:var(--caqui);opacity:.75;margin:0;letter-spacing:.03em;flex:none;}
+.closing-legal{font-size:.78rem;color:var(--caqui);opacity:.8;margin:0;letter-spacing:.02em;}
+.closing-credit{font-size:.76rem;color:var(--caqui);opacity:.6;margin:0;letter-spacing:.02em;}
 
 /* Botão flutuante de WhatsApp --------------------------------------------------- */
 .wa-float{
@@ -623,15 +633,7 @@ p{margin:0 0 1em;}
   .faq-title{margin-bottom:1.8rem;}
   .faq > .text-cta{text-align:left;}
 
-  .visit-cta-simple{padding:1.2rem clamp(1.2rem,4vw,3rem);}
-
-  .closing{padding:1.2rem clamp(1.2rem,4vw,3rem) .8rem;gap:.3rem;}
-  .closing .logo-pill{width:26px;height:26px;padding:.3rem;margin-bottom:.3rem;}
-  .closing .logo-pill img{height:15px;width:15px;}
-  .closing h2{font-size:.82rem;}
-  .closing strong{font-size:.7rem;margin-bottom:.4rem;}
-  .footer-links{gap:1.3rem;margin-bottom:.35rem;}
-  .closing-meta{font-size:.7rem;}
+  .closing{padding:1.4rem clamp(1.2rem,4vw,3rem);}
 }
 
 @media (max-width:900px){
@@ -653,6 +655,11 @@ p{margin:0 0 1em;}
   .lot-products{grid-template-columns:1fr;gap:2.6rem;}
   .audience-v2-grid,.product-v3-row{grid-template-columns:repeat(2,1fr);row-gap:2.2rem;}
   .audience-v2-grid article:nth-child(3),.p3-item:nth-child(3){border-left:none;}
+
+  .sales-contact-inner{padding-top:3.4rem;padding-bottom:3.4rem;}
+  .sales-contact-cards{grid-template-columns:1fr;}
+
+  .closing{flex-direction:column;align-items:flex-start;}
 }
 
 @media (max-width:560px){
