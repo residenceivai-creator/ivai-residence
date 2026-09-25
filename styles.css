@@ -98,6 +98,40 @@ p{margin:0 0 1em;}
 }
 .text-cta.light{color:var(--bege);border-color:var(--terra-crua);}
 
+/* Faixa promocional --------------------------------------------------------- */
+.promo-bar{background:var(--marrom);color:var(--bege);}
+.promo-bar-inner{
+  max-width:var(--max);margin:0 auto;
+  padding:.6rem clamp(1.2rem,4vw,3rem);
+  display:flex;align-items:center;justify-content:center;gap:1.6rem;
+}
+.promo-items{display:flex;align-items:center;justify-content:center;gap:1.4rem;flex-wrap:wrap;}
+.promo-item{display:flex;align-items:center;gap:.55em;}
+.promo-icon{width:20px;height:20px;flex:none;opacity:.9;}
+.promo-text{font-size:.76rem;line-height:1.35;letter-spacing:.01em;color:var(--bege);opacity:.92;}
+.promo-text strong{display:block;font-family:var(--font-title);font-weight:600;text-transform:uppercase;letter-spacing:.04em;font-size:.8rem;color:var(--bege);opacity:1;}
+.promo-sep{width:1px;height:26px;background:rgba(234,228,227,.3);flex:none;}
+.promo-btn{
+  flex:none;display:inline-flex;align-items:center;gap:.5em;
+  background:var(--bege);color:var(--marrom-noturno);
+  padding:.55em 1.1em;border-radius:22px;
+  font-family:var(--font-title);font-weight:600;text-transform:uppercase;
+  font-size:.76rem;letter-spacing:.05em;white-space:nowrap;
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.promo-btn:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,.18);}
+.promo-btn svg{width:15px;height:15px;flex:none;color:#25D366;}
+
+@media (max-width:900px){
+  .promo-bar-inner{flex-direction:column;gap:.5rem;padding:.7rem clamp(1.2rem,4vw,3rem);}
+  .promo-items{flex-direction:column;align-items:flex-start;gap:.4rem;}
+  .promo-icon{width:17px;height:17px;}
+  .promo-sep{display:none;}
+  .promo-text{font-size:.7rem;}
+  .promo-text strong{font-size:.74rem;}
+  .promo-btn{width:100%;justify-content:center;margin-top:.15rem;}
+}
+
 /* Header / nav ------------------------------------------------------------ */
 .topbar{
   position:sticky;top:0;z-index:60;
