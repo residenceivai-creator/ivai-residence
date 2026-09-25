@@ -328,6 +328,7 @@ p{margin:0 0 1em;}
 .audience-v2-grid article:first-child{border-left:none;}
 .a-icon{width:30px;height:30px;color:var(--terracota);margin:0 auto 1.1rem;}
 .audience-v2-grid h3{font-size:1.1rem;text-transform:none;letter-spacing:0;margin-bottom:.5em;}
+.audience-v2-grid h3:last-child{margin-bottom:0;}
 .audience-v2-grid p{color:var(--marrom-medio);font-size:.92rem;margin:0;}
 .audience-v2 > .text-cta{margin-top:2.6rem;}
 
