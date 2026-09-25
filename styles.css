@@ -529,6 +529,7 @@ p{margin:0 0 1em;}
 }
 @media (max-width:600px){
   .wa-float{right:.9rem;bottom:.9rem;font-size:.86rem;}
+  .loc-grid{grid-template-columns:1fr;gap:2.2rem;}
 }
 
 /* Pop-up de saída -------------------------------------------------------------- */
@@ -603,8 +604,7 @@ p{margin:0 0 1em;}
   .nav-toggle{display:flex;}
 
   .hero{min-height:88vh;}
-  .loc-grid,.lot-products{grid-template-columns:1fr;}
-  .lot-products{gap:2.6rem;}
+  .lot-products{grid-template-columns:1fr;gap:2.6rem;}
   .audience-v2-grid,.product-v3-row{grid-template-columns:repeat(2,1fr);row-gap:2.2rem;}
   .audience-v2-grid article:nth-child(3),.p3-item:nth-child(3){border-left:none;}
 }
