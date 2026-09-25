@@ -470,7 +470,6 @@ p{margin:0 0 1em;}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease;}
 .faq-item.open .faq-a{max-height:600px;}
 .faq-a p{color:var(--marrom-medio);font-size:1rem;padding-bottom:1.3rem;margin:0;}
-.faq-a p.faq-fine{font-size:.8rem;opacity:.7;margin-top:-.9rem;}
 .faq > .text-cta{display:block;text-align:center;margin-top:2.4rem;}
 
 /* CTA WhatsApp — só o botão, faixa simples entre o FAQ e o rodapé ------------ */
