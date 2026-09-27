@@ -682,6 +682,46 @@ p{margin:0 0 1em;}
   font-size:1.6rem;line-height:1;color:var(--marrom-medio);cursor:pointer;
 }
 
+/* Modal de WhatsApp — escolha do consultor ----------------------------------- */
+.wa-modal-overlay{
+  position:fixed;inset:0;background:rgba(46,33,27,.6);
+  display:flex;align-items:center;justify-content:center;padding:1.2rem;z-index:110;
+}
+.wa-modal-overlay[hidden]{display:none;}
+.wa-modal-card{
+  position:relative;background:var(--bege);border-radius:14px;
+  max-width:760px;width:100%;padding:2.4rem 2rem 2rem;
+  box-shadow:0 24px 60px rgba(0,0,0,.32);text-align:center;
+}
+.wa-modal-card h3{font-family:var(--font-title);text-transform:none;font-size:1.4rem;letter-spacing:0;margin-bottom:.5rem;color:var(--marrom-noturno);}
+.wa-modal-card > p{color:var(--marrom-medio);font-size:.94rem;max-width:46ch;margin:0 auto 2rem;}
+.wa-modal-close{
+  position:absolute;top:.7rem;right:.9rem;background:none;border:none;
+  font-size:1.8rem;line-height:1;color:var(--marrom-medio);cursor:pointer;
+}
+.wa-modal-consultants{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+.wa-modal-consultant{
+  display:flex;flex-direction:column;align-items:center;gap:.2rem;
+  background:#fff;border:1px solid rgba(46,33,27,.12);border-radius:14px;
+  padding:1.6rem 1.2rem;cursor:pointer;text-align:center;
+  font-family:var(--font-body);transition:transform .18s ease, box-shadow .18s ease;
+}
+.wa-modal-consultant:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(46,33,27,.12);}
+.wa-modal-consultant-name{font-family:var(--font-title);font-weight:600;font-size:1.15rem;color:var(--marrom-noturno);}
+.wa-modal-consultant-role{font-size:.8rem;color:var(--marrom-medio);margin-bottom:1rem;}
+.wa-modal-consultant-btn{
+  display:inline-flex;align-items:center;gap:.5em;
+  background:#25D366;color:#fff;padding:.55em 1.1em;border-radius:20px;
+  font-family:var(--font-title);font-weight:600;font-size:.74rem;
+  text-transform:uppercase;letter-spacing:.03em;
+}
+.wa-modal-consultant-btn svg{width:15px;height:15px;flex:none;}
+
+@media (max-width:700px){
+  .wa-modal-consultants{grid-template-columns:1fr;}
+  .wa-modal-card{padding:2rem 1.4rem 1.6rem;}
+}
+
 /* Desktop — aperta os respiros entre seções e dá mais presença ao selo de vendas,
    mantendo o mobile intocado (ele já está aprovado) --------------------------- */
 @media (min-width:901px){

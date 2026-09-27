@@ -155,6 +155,48 @@ function initIvaiResidence() {
     });
   }
 
+  // Modal de WhatsApp — todo CTA de WhatsApp abre a escolha de consultor ---
+  const waModal = document.getElementById("waModal");
+  const waModalClose = document.getElementById("waModalClose");
+  const WA_DEFAULT_MESSAGE = "Olá! Vim pelo site do Ivaí Residence e gostaria de saber mais sobre os lotes e condições disponíveis.";
+
+  if (waModal) {
+    function showWaModal() {
+      if (exitPopup) exitPopup.hidden = true;
+      waModal.hidden = false;
+    }
+    function hideWaModal() {
+      waModal.hidden = true;
+    }
+
+    document.querySelectorAll('a[href^="https://wa.me/"]').forEach(function (link) {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        showWaModal();
+      });
+    });
+
+    document.querySelectorAll(".wa-modal-consultant").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        const phone = btn.dataset.phone;
+        const consultant = btn.dataset.consultant;
+        const url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(WA_DEFAULT_MESSAGE);
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: "whatsapp_" + consultant });
+        hideWaModal();
+        window.open(url, "_blank", "noopener");
+      });
+    });
+
+    waModalClose.addEventListener("click", hideWaModal);
+    waModal.addEventListener("click", function (e) {
+      if (e.target === waModal) hideWaModal();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") hideWaModal();
+    });
+  }
+
   // Movimento sutil ao rolar a página --------------------------------------
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
