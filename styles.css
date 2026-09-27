@@ -687,7 +687,11 @@ p{margin:0 0 1em;}
 @media (min-width:901px){
   .section{padding:3.2rem clamp(1.2rem,4vw,3rem);}
 
+  .audience-v2{padding-top:2.2rem;padding-bottom:2.2rem;}
+  .audience-v2 .section-label{margin-bottom:.9em;}
   .audience-v2-grid{gap:2rem;}
+  .a-icon{margin-bottom:.8rem;}
+  .audience-v2 > .text-cta{margin-top:1.8rem;}
   .loc-grid{gap:2.6rem;}
 
   .faq{max-width:var(--max);text-align:left;}
@@ -723,7 +727,8 @@ p{margin:0 0 1em;}
   .sales-contact-inner{padding-top:3.4rem;padding-bottom:3.4rem;}
   .sales-contact-cards{grid-template-columns:1fr;}
 
-  .closing{flex-direction:column;align-items:flex-start;}
+  .closing{flex-direction:column;align-items:flex-start;gap:.9rem;}
+  .closing-left{flex-direction:column;align-items:flex-start;gap:.7rem;}
 }
 
 @media (max-width:560px){
