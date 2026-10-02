@@ -88,10 +88,34 @@ function initIvaiResidence() {
     });
   });
 
-  // Selo de desconto — tooltip por toque no mobile (hover cuida do desktop) -
+  // Selo de desconto — tooltip posicionado via JS (escapa do overflow:hidden
+  // do card) por hover no desktop e toque no mobile ------------------------
+  function positionDiscountTooltip(btn) {
+    const tooltip = btn.nextElementSibling;
+    if (!tooltip || !tooltip.classList.contains("discount-tooltip")) return;
+    const rect = btn.getBoundingClientRect();
+    const margin = 12;
+    const tooltipWidth = tooltip.offsetWidth || 280;
+    let left = rect.left;
+    const maxLeft = window.innerWidth - tooltipWidth - margin;
+    if (left > maxLeft) left = maxLeft;
+    if (left < margin) left = margin;
+    tooltip.style.left = left + "px";
+    tooltip.style.top = rect.bottom + 10 + "px";
+    const arrowX = Math.max(12, Math.min(tooltipWidth - 12, rect.left + rect.width / 2 - left));
+    tooltip.style.setProperty("--arrow-x", arrowX + "px");
+  }
+
   document.querySelectorAll(".discount-badge").forEach(function (btn) {
+    btn.addEventListener("mouseenter", function () {
+      positionDiscountTooltip(btn);
+    });
+    btn.addEventListener("focus", function () {
+      positionDiscountTooltip(btn);
+    });
     btn.addEventListener("click", function (e) {
       e.stopPropagation();
+      positionDiscountTooltip(btn);
       const wrap = btn.closest(".discount-badge-wrap");
       const isOpen = wrap.classList.contains("is-open");
       document.querySelectorAll(".discount-badge-wrap.is-open").forEach(function (w) {
@@ -105,6 +129,11 @@ function initIvaiResidence() {
       w.classList.remove("is-open");
     });
   });
+  window.addEventListener("scroll", function () {
+    document.querySelectorAll(".discount-badge-wrap.is-open").forEach(function (w) {
+      w.classList.remove("is-open");
+    });
+  }, { passive: true });
 
   // Contagem regressiva — condições de lançamento válidas até 17/10 --------
   const countdownEl = document.getElementById("launchCountdown");

@@ -517,17 +517,17 @@ p{margin:0 0 1em;}
 }
 .discount-badge:hover,.discount-badge:focus{background:rgba(138,102,86,.08);}
 .discount-tooltip{
-  position:absolute;top:calc(100% + 10px);left:0;
-  width:280px;max-width:min(80vw,300px);
+  position:fixed;top:0;left:0;
+  width:280px;max-width:min(86vw,300px);
   background:#fff;border:1px solid rgba(46,33,27,.12);border-radius:12px;
   padding:1rem 1.1rem;box-shadow:0 14px 34px rgba(46,33,27,.18);
-  text-align:left;z-index:20;
+  text-align:left;z-index:120;
   opacity:0;visibility:hidden;pointer-events:none;
   transform:translateY(-4px);
   transition:opacity .18s ease, transform .18s ease;
 }
 .discount-tooltip::before{
-  content:"";position:absolute;bottom:100%;left:16px;
+  content:"";position:absolute;bottom:100%;left:var(--arrow-x,16px);
   border:6px solid transparent;border-bottom-color:#fff;
 }
 .discount-badge:hover + .discount-tooltip,
@@ -538,10 +538,6 @@ p{margin:0 0 1em;}
 .discount-tooltip strong{display:block;font-family:var(--font-title);font-weight:600;font-size:.84rem;color:var(--marrom-noturno);margin-bottom:.55em;}
 .discount-tooltip p{font-size:.78rem;color:var(--marrom-medio);margin:0 0 .5em;line-height:1.45;}
 .discount-tooltip p:last-child{margin-bottom:0;}
-@media (max-width:480px){
-  .discount-tooltip{left:auto;right:-12px;width:250px;}
-  .discount-tooltip::before{left:auto;right:18px;}
-}
 .lot-option-row{display:flex;align-items:center;justify-content:space-between;gap:.8rem;flex-wrap:wrap;}
 .lot-option-price{display:block;font-family:var(--font-title);font-size:1.4rem;font-weight:600;color:var(--marrom-noturno);}
 .lot-option-installment{
