@@ -88,6 +88,24 @@ function initIvaiResidence() {
     });
   });
 
+  // Selo de desconto — tooltip por toque no mobile (hover cuida do desktop) -
+  document.querySelectorAll(".discount-badge").forEach(function (btn) {
+    btn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      const wrap = btn.closest(".discount-badge-wrap");
+      const isOpen = wrap.classList.contains("is-open");
+      document.querySelectorAll(".discount-badge-wrap.is-open").forEach(function (w) {
+        w.classList.remove("is-open");
+      });
+      if (!isOpen) wrap.classList.add("is-open");
+    });
+  });
+  document.addEventListener("click", function () {
+    document.querySelectorAll(".discount-badge-wrap.is-open").forEach(function (w) {
+      w.classList.remove("is-open");
+    });
+  });
+
   // Contagem regressiva — condições de lançamento válidas até 17/10 --------
   const countdownEl = document.getElementById("launchCountdown");
   if (countdownEl) {
