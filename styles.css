@@ -545,7 +545,6 @@ p{margin:0 0 1em;}
   color:var(--marrom-noturno);line-height:1.15;
 }
 .lot-option-unit{font-size:.5em;font-weight:400;letter-spacing:0;color:var(--marrom-medio);}
-.lot-option-down{display:block;color:var(--marrom-medio);font-weight:400;font-size:.84rem;margin-top:.6em;}
 .lot-option-fine{color:var(--marrom-medio);opacity:.75;font-size:.68rem;line-height:1.4;margin:.5em 0 0;}
 .lot-option-text{color:var(--marrom-medio);font-weight:500;font-size:.88rem;margin:0;}
 .lot-option-btn,.lot-option-btn-sm{
