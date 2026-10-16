@@ -471,6 +471,10 @@ p{margin:0 0 1em;}
   display:block;font-family:var(--font-title);font-weight:700;
   font-size:1.7rem;color:var(--marrom-noturno);margin-bottom:.4rem;
 }
+.lot-card-v2-sqm{
+  display:block;font-family:var(--font-title);font-weight:600;
+  font-size:.86rem;letter-spacing:.02em;color:var(--terracota);margin-bottom:.9rem;
+}
 .lot-card-v2-tagline{color:var(--marrom-medio);font-size:.92rem;margin:0 0 1.5rem;}
 .lot-card-v2-toggle{
   display:inline-flex;align-items:center;gap:.6em;
