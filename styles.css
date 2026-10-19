@@ -21,7 +21,7 @@
 
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-#lancamento,#diferenciais,#localizacao,#condicoes,#faq{scroll-margin-top:80px;}
+#diferenciais,#localizacao,#condicoes,#faq{scroll-margin-top:80px;}
 body{
   margin:0;
   background:var(--bege);
@@ -103,42 +103,6 @@ p{margin:0 0 1em;}
   border-bottom:2px solid var(--terracota);padding-bottom:4px;
 }
 .text-cta.light{color:var(--bege);border-color:var(--terra-crua);}
-
-/* Faixa promocional --------------------------------------------------------- */
-.promo-bar{background:var(--marrom);color:var(--bege);}
-.promo-bar-inner{
-  max-width:var(--max);margin:0 auto;
-  padding:.6rem clamp(1.2rem,4vw,3rem);
-  display:flex;align-items:center;justify-content:center;gap:1.6rem;
-}
-.promo-items{display:flex;align-items:center;justify-content:center;gap:1.4rem;flex-wrap:wrap;}
-.promo-item{display:flex;align-items:center;gap:.55em;}
-.promo-icon{width:20px;height:20px;flex:none;opacity:.9;}
-.promo-text{font-size:.76rem;line-height:1.35;letter-spacing:.01em;color:var(--bege);opacity:.92;}
-.promo-text strong{display:block;font-family:var(--font-title);font-weight:600;text-transform:uppercase;letter-spacing:.04em;font-size:.8rem;color:var(--bege);opacity:1;}
-.promo-sep{width:1px;height:26px;background:rgba(234,228,227,.3);flex:none;}
-.promo-btn{
-  flex:none;display:inline-flex;align-items:center;gap:.5em;
-  background:var(--bege);color:var(--marrom-noturno);
-  padding:.55em 1.1em;border-radius:22px;
-  font-family:var(--font-title);font-weight:600;text-transform:uppercase;
-  font-size:.76rem;letter-spacing:.05em;white-space:nowrap;
-  transition:transform .18s ease, box-shadow .18s ease;
-}
-.promo-btn:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,.18);}
-.promo-btn svg{width:15px;height:15px;flex:none;color:#25D366;}
-
-@media (max-width:900px){
-  .promo-bar-inner{flex-direction:column;gap:.6rem;padding:.65rem clamp(1.2rem,4vw,3rem);}
-  .promo-items{flex-wrap:nowrap;justify-content:space-between;gap:.5rem;width:100%;}
-  .promo-item{flex-direction:column;align-items:center;text-align:center;gap:.3rem;flex:1;min-width:0;}
-  .promo-icon{width:18px;height:18px;}
-  .promo-sep{display:none;}
-  .promo-text{font-size:.66rem;line-height:1.2;}
-  .promo-text strong{font-size:.66rem;}
-  .promo-text-detail{display:none;}
-  .promo-btn{width:100%;justify-content:center;}
-}
 
 /* Header / nav ------------------------------------------------------------ */
 .topbar{
@@ -388,56 +352,6 @@ p{margin:0 0 1em;}
   .river-feature-text h2{max-width:none;}
   .river-feature-card{flex-direction:column;}
   .river-feature-item{flex:none;}
-}
-
-/* Lançamento oficial --------------------------------------------------------- */
-.launch-feature{position:relative;overflow:hidden;}
-.launch-feature-bg{
-  position:absolute;inset:0;background-size:cover;background-position:center;z-index:0;
-  background-image:linear-gradient(100deg, rgba(16,10,7,.94) 0%, rgba(16,10,7,.82) 32%, rgba(16,10,7,.5) 62%, rgba(16,10,7,.18) 100%), url('assets/lancamento-bg.jpg');
-}
-.launch-feature-inner{position:relative;z-index:1;color:var(--bege);padding-top:5rem;padding-bottom:5rem;}
-.launch-feature-inner .section-label{color:var(--caqui);}
-.launch-feature-inner h2{
-  font-family:var(--font-title);font-weight:700;color:var(--bege);
-  font-size:clamp(2.4rem,6vw,4.2rem);line-height:1;margin:.3em 0 .2em;
-}
-.launch-feature-sub{
-  font-family:var(--font-title);font-weight:600;text-transform:uppercase;
-  letter-spacing:.05em;color:var(--terracota);font-size:1.05rem;margin:0 0 1.1em;
-}
-.launch-feature-lead{font-size:1.02rem;max-width:44ch;opacity:.94;margin:0 0 2.2em;line-height:1.55;}
-
-.launch-feature-row{
-  display:flex;flex-wrap:wrap;align-items:center;gap:1.4rem;
-  padding-bottom:1.8rem;margin-bottom:1.8rem;
-  border-bottom:1px solid rgba(234,228,227,.2);
-}
-.launch-feature-item{display:flex;align-items:center;gap:.7em;max-width:220px;}
-.launch-feature-item svg{width:26px;height:26px;flex:none;opacity:.9;}
-.launch-feature-item span{font-family:var(--font-title);font-weight:500;font-size:.88rem;line-height:1.3;}
-.launch-feature-sep{width:1px;height:32px;background:rgba(234,228,227,.28);flex:none;}
-
-.launch-feature-btn{
-  display:inline-flex;align-items:center;gap:.6em;
-  background:var(--bege);color:var(--marrom-noturno);
-  padding:.85em 1.8em;border-radius:30px;
-  font-family:var(--font-title);font-weight:600;text-transform:uppercase;
-  font-size:.85rem;letter-spacing:.05em;
-  box-shadow:0 10px 28px rgba(0,0,0,.28);
-  transition:transform .18s ease, box-shadow .18s ease;
-}
-.launch-feature-btn:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(0,0,0,.34);}
-.launch-feature-btn svg{width:18px;height:18px;flex:none;color:#25D366;}
-
-@media (max-width:900px){
-  .launch-feature-inner{padding-top:3.8rem;padding-bottom:3.8rem;}
-  .launch-feature-row{flex-direction:column;align-items:flex-start;gap:1.2rem;}
-  .launch-feature-sep{display:none;}
-  .launch-feature-item{max-width:none;}
-}
-@media (max-width:560px){
-  .launch-feature-btn{width:100%;justify-content:center;}
 }
 
 /* Lotes — apresentação clean, card por metragem com accordion ---------------- */
@@ -691,12 +605,6 @@ p{margin:0 0 1em;}
 
   /* Viva o melhor da região — remove o card verde, que cobria a foto */
   .river-feature-card{display:none;}
-
-  /* Lançamento oficial — mostra a foto (costela/chopp), não só fundo escuro */
-  .launch-feature-bg{
-    background-image:linear-gradient(180deg, rgba(16,10,7,.88) 0%, rgba(16,10,7,.55) 45%, rgba(16,10,7,.22) 100%), url('assets/lancamento-bg.jpg');
-    background-position:75% center;
-  }
 
   /* Contato comercial — 3 botões compactos lado a lado no lugar dos cards grandes */
   .sales-contact-cards{display:none;}

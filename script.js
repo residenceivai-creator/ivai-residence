@@ -135,10 +135,10 @@ function initIvaiResidence() {
     });
   }, { passive: true });
 
-  // Contagem regressiva — condições de lançamento válidas até 17/10 --------
+  // Contagem regressiva — condição de lançamento válida até 24/10 ---------
   const countdownEl = document.getElementById("launchCountdown");
   if (countdownEl) {
-    const deadline = new Date("2026-10-17T23:59:59-03:00").getTime();
+    const deadline = new Date("2026-10-24T23:59:59-03:00").getTime();
     const daysEl = countdownEl.querySelector("[data-cd-days]");
     const hoursEl = countdownEl.querySelector("[data-cd-hours]");
     const minutesEl = countdownEl.querySelector("[data-cd-minutes]");
