@@ -359,21 +359,18 @@ p{margin:0 0 1em;}
 .conditions-v2-head{max-width:680px;margin-bottom:2.8rem;}
 .conditions-v2-lead{color:var(--marrom-medio);font-size:1.02rem;margin:0 0 2rem;}
 
-.countdown-box{
-  display:inline-flex;flex-direction:column;gap:.7rem;
+.launch-highlight{
+  display:inline-flex;align-items:center;gap:.9rem;
   background:#fff;border:1px solid rgba(46,33,27,.12);border-radius:16px;
-  padding:1.2rem 1.6rem;box-shadow:0 8px 22px rgba(46,33,27,.06);
+  padding:1.1rem 1.5rem;box-shadow:0 8px 22px rgba(46,33,27,.06);
 }
-.countdown-eyebrow{
-  font-family:var(--font-title);font-weight:600;text-transform:uppercase;
-  letter-spacing:.04em;font-size:.76rem;color:var(--terracota);
+.launch-highlight-icon{
+  display:flex;align-items:center;justify-content:center;flex:none;
+  width:36px;height:36px;border-radius:50%;
+  background:rgba(138,102,86,.1);color:var(--terracota);
 }
-.countdown-timer{display:flex;align-items:baseline;gap:.5rem;}
-.countdown-unit{display:flex;flex-direction:column;align-items:center;min-width:2.3em;}
-.countdown-unit strong{font-family:var(--font-title);font-weight:700;font-size:1.7rem;color:var(--marrom-noturno);line-height:1;}
-.countdown-unit span{font-size:.6rem;text-transform:uppercase;letter-spacing:.05em;color:var(--marrom-medio);margin-top:.25em;}
-.countdown-colon{font-family:var(--font-title);font-weight:700;font-size:1.4rem;color:var(--caqui);align-self:flex-start;margin-top:.1em;}
-.countdown-note{font-size:.78rem;color:var(--marrom-medio);opacity:.85;}
+.launch-highlight-icon svg{width:19px;height:19px;}
+.launch-highlight p{margin:0;color:var(--marrom-noturno);font-weight:500;font-size:.94rem;line-height:1.4;}
 
 .lot-cards-v2{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;align-items:start;}
 .lot-card-v2{
@@ -384,10 +381,6 @@ p{margin:0 0 1em;}
 .lot-card-v2-size{
   display:block;font-family:var(--font-title);font-weight:700;
   font-size:1.7rem;color:var(--marrom-noturno);margin-bottom:.4rem;
-}
-.lot-card-v2-sqm{
-  display:block;font-family:var(--font-title);font-weight:600;
-  font-size:.86rem;letter-spacing:.02em;color:var(--terracota);margin-bottom:.9rem;
 }
 .lot-card-v2-tagline{color:var(--marrom-medio);font-size:.92rem;margin:0 0 1.5rem;}
 .lot-card-v2-toggle{
@@ -418,44 +411,6 @@ p{margin:0 0 1em;}
   font-family:var(--font-title);padding:.25em .65em;border-radius:20px;
 }
 
-/* Selo de desconto com tooltip — hover no desktop, toque no mobile ---------- */
-.discount-badge-wrap{position:relative;display:inline-flex;}
-.discount-badge{
-  display:inline-flex;align-items:center;gap:.35em;
-  background:transparent;border:1px solid var(--terracota);color:var(--terracota);
-  text-transform:uppercase;letter-spacing:.05em;font-size:.62rem;font-weight:600;
-  font-family:var(--font-title);padding:.24em .65em .24em .7em;border-radius:20px;
-  cursor:pointer;line-height:1.3;
-}
-.discount-badge::after{
-  content:"i";display:inline-flex;align-items:center;justify-content:center;
-  width:12px;height:12px;border-radius:50%;border:1px solid var(--terracota);
-  font-family:var(--font-body);font-style:italic;font-weight:700;font-size:.6rem;
-  flex:none;
-}
-.discount-badge:hover,.discount-badge:focus{background:rgba(138,102,86,.08);}
-.discount-tooltip{
-  position:fixed;top:0;left:0;
-  width:280px;max-width:min(86vw,300px);
-  background:#fff;border:1px solid rgba(46,33,27,.12);border-radius:12px;
-  padding:1rem 1.1rem;box-shadow:0 14px 34px rgba(46,33,27,.18);
-  text-align:left;z-index:120;
-  opacity:0;visibility:hidden;pointer-events:none;
-  transform:translateY(-4px);
-  transition:opacity .18s ease, transform .18s ease;
-}
-.discount-tooltip::before{
-  content:"";position:absolute;bottom:100%;left:var(--arrow-x,16px);
-  border:6px solid transparent;border-bottom-color:#fff;
-}
-.discount-badge:hover + .discount-tooltip,
-.discount-badge:focus + .discount-tooltip,
-.discount-badge-wrap.is-open .discount-tooltip{
-  opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0);
-}
-.discount-tooltip strong{display:block;font-family:var(--font-title);font-weight:600;font-size:.84rem;color:var(--marrom-noturno);margin-bottom:.55em;}
-.discount-tooltip p{font-size:.78rem;color:var(--marrom-medio);margin:0 0 .5em;line-height:1.45;}
-.discount-tooltip p:last-child{margin-bottom:0;}
 .lot-option-row{display:flex;align-items:center;justify-content:space-between;gap:.8rem;flex-wrap:wrap;}
 .lot-option-price{display:block;font-family:var(--font-title);font-size:1.4rem;font-weight:600;color:var(--marrom-noturno);}
 .lot-option-installment{
@@ -483,9 +438,7 @@ p{margin:0 0 1em;}
 
 @media (max-width:900px){
   .lot-cards-v2{grid-template-columns:1fr;gap:1.4rem;}
-  .countdown-box{width:100%;}
-  .countdown-unit{min-width:2.1em;}
-  .countdown-unit strong{font-size:1.5rem;}
+  .launch-highlight{width:100%;box-sizing:border-box;}
 }
 @media (max-width:480px){
   .lot-card-v2-top{padding:1.5rem 1.4rem 1.3rem;}
@@ -494,9 +447,8 @@ p{margin:0 0 1em;}
   .lot-option-row{gap:.6rem;}
   .lot-option-installment{font-size:1.5rem;}
   .lot-option-btn-sm{font-size:.62rem;padding:.4em .7em;}
-  .countdown-box{padding:1.1rem 1.2rem;}
-  .countdown-unit strong{font-size:1.3rem;}
-  .countdown-colon{font-size:1.2rem;}
+  .launch-highlight{padding:.95rem 1.2rem;gap:.7rem;}
+  .launch-highlight p{font-size:.88rem;}
 }
 
 /* FAQ ------------------------------------------------------------------------- */
